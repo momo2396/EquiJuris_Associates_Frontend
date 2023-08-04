@@ -11,6 +11,7 @@ import { AiFillHeart } from "react-icons/ai";
 import { AiFillStar } from "react-icons/ai";
 import { BsFacebook } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
+import { ImQuotesLeft } from "react-icons/im";
 function App() {
   const [count, setCount] = useState(0);
   return (
@@ -105,6 +106,8 @@ function App() {
         </div>
       </header>
       <main>
+        {/* rating */}
+
         <section className="py-20">
           <h3 className="pb-10 text-3xl font-medium text-center max-w-[753px]mx-auto">
             If you're in trouble<br></br> we can help.
@@ -390,43 +393,80 @@ function App() {
             </div>
           </div>
         </section>
+        <section className="bg-[#1F2732] text-white py-20">
+          <h1 className="text-center text-3xl font-medium pb-10">
+            Top Client Opinions & Reviews
+          </h1>
+          <div className="max-w-[1200px] mx-auto px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="bg-[#2E3947] rounded-bl-2xl p-10">
+              <ImQuotesLeft className="text-[#D1B06B] text-3xl" />
+              <p className="py-5 text-[#D7D7D7]">
+                There are of Lorem Ipsum available, but the majority have su
+                alteration in some form, by injected oir which don't look even
+                slightly believable.
+              </p>
+              <h3 className="text-lg font-bold">Natasha</h3>
+              <p className="text-[#D7D7D7] text-sm">Business Man</p>
+            </div>
+            <div className="bg-[#2E3947] rounded-bl-2xl p-10">
+              <ImQuotesLeft className="text-[#D1B06B] text-3xl" />
+              <p className="py-5 text-[#D7D7D7]">
+                There are of Lorem Ipsum available, but the majority have su
+                alteration in some form, by injected oir which don't look even
+                slightly believable.
+              </p>
+              <h3 className="text-lg font-bold">Natasha</h3>
+              <p className="text-[#D7D7D7] text-sm">Business Man</p>
+            </div>
+            <div className="bg-[#2E3947] rounded-bl-2xl p-10">
+              <ImQuotesLeft className="text-[#D1B06B] text-3xl" />
+              <p className="py-5 text-[#D7D7D7]">
+                There are of Lorem Ipsum available, but the majority have su
+                alteration in some form, by injected oir which don't look even
+                slightly believable.
+              </p>
+              <h3 className="text-lg font-bold">Natasha</h3>
+              <p className="text-[#D7D7D7] text-sm">Business Man</p>
+            </div>
+          </div>
+        </section>
         {/* appointment section */}
         <section>
-          <div class="flex justify-center  items-center w-screen m-auto appointment_background">
-            <div class="container w-full m-auto my-4 px-4 lg:px-20">
-              <div class="w-full p-8 my-4 md:px-12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl bg-[#141516]">
-                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
+          <div className="flex justify-center items-center mx-auto appointment_background py-20">
+            <div className="container w-full m-auto my-4 px-4 lg:px-20">
+              <div className="w-full p-8 my-4 md:px-12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl bg-[#141516]">
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
                   <input
-                    class="w-full bg-[#141516] text-white mt-2 p-3 border-b-[1px] placeholder-gray-400 border-slate-400 focus:outline-none focus:shadow-outline"
+                    className="w-full bg-[#141516] text-white mt-2 p-3 border-b-[1px] placeholder-gray-400 border-slate-400 focus:outline-none focus:shadow-outline"
                     type="text"
                     placeholder="Full Name*"
                   />
                   <input
-                    class="w-full bg-[#141516] text-white-900 mt-2 p-3 border-b-[1px] placeholder-gray-400  border-slate-400 focus:outline-none focus:shadow-outline"
+                    className="w-full bg-[#141516] text-white-900 mt-2 p-3 border-b-[1px] placeholder-gray-400  border-slate-400 focus:outline-none focus:shadow-outline"
                     type="email"
                     placeholder="Email Address*"
                   />
                   <input
-                    class="w-full bg-[#141516] text-white mt-2 p-3 border-b-[1px] placeholder-gray-400 border-slate-400 focus:outline-none focus:shadow-outline "
+                    className="w-full bg-[#141516] text-white mt-2 p-3 border-b-[1px] placeholder-gray-400 border-slate-400 focus:outline-none focus:shadow-outline "
                     type="text"
                     placeholder="Phone Number*"
                   />
                   <input
-                    class="w-full bg-[#141516] text-white mt-2 p-3 border-b-[1px] placeholder-gray-400 border-slate-400 focus:outline-none focus:shadow-outline"
+                    className="w-full bg-[#141516] text-white mt-2 p-3 border-b-[1px] placeholder-gray-400 border-slate-400 focus:outline-none focus:shadow-outline"
                     type="text"
                     placeholder="Subject*"
                   />
                 </div>
-                <div class="my-4">
+                <div className="my-4">
                   <textarea
                     placeholder="Your Message*"
-                    class="w-full h-32 bg-[#141516] placeholder-gray-400 text-white mt-2 p-3 border-b-[1px] border-slate-400 focus:outline-none focus:shadow-outline"
+                    className="w-full h-32 bg-[#141516] placeholder-gray-400 text-white mt-2 p-3 border-b-[1px] border-slate-400 focus:outline-none focus:shadow-outline"
                   ></textarea>
                 </div>
-                <div class="my-2  flex items-center justify-center">
+                <div className="mt-10  flex items-center justify-center">
                   <button
-                    class="btn capitalize text-sm font-bold tracking-wide bg-white text-black p-3 rounded-lg 
-                                focus:outline-none focus:shadow-outline"
+                    className="btn capitalize text-sm font-bold tracking-wide bg-white text-black p-3 rounded-lg 
+                    hover:bg-[#D1B06B] hover:border-[#D1B06B]         focus:outline-none focus:shadow-outline"
                   >
                     Get An Appointment
                   </button>
@@ -435,7 +475,6 @@ function App() {
             </div>
           </div>
         </section>
-
         {/* blog card: m */}
         <section className="bg-[#1F2732] py-20 text-white">
           <h1 className="text-4xl text-center pb-5">Recent Blogs</h1>
@@ -588,27 +627,27 @@ function App() {
           </div>
         </section>
       </main>
-      <footer class="footer footer-center p-10 bg-[#1F2732] text-white opacity-90">
+      <footer className="footer footer-center p-10 bg-[#1F2732] text-white opacity-90">
         <div>
-          <h2 class="text-3xl font-extrabold">EquiJuris Associates</h2>
+          <h2 className="text-3xl font-bold">EquiJuris Associates</h2>
         </div>
-        <div class="grid grid-flow-col gap-4">
-          <a class="link link-hover hover:no-underline">Home</a>
-          <a class="link link-hover hover:no-underline">About</a>
-          <a class="link link-hover hover:no-underline">Contact</a>
-          <a class="link link-hover hover:no-underline">Blog</a>
-          <a class="link link-hover hover:no-underline">Lawyers</a>
-          <a class="link link-hover hover:no-underline">Practice Areas</a>
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-6">
+          <a className="link link-hover hover:no-underline">Home</a>
+          <a className="link link-hover hover:no-underline">About</a>
+          <a className="link link-hover hover:no-underline">Contact</a>
+          <a className="link link-hover hover:no-underline">Blog</a>
+          <a className="link link-hover hover:no-underline">Lawyers</a>
+          <a className="link link-hover hover:no-underline">Practice Areas</a>
         </div>
         <div>
-          <div class="grid grid-flow-col gap-4">
+          <div className="grid grid-flow-col gap-4">
             <a>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
-                class="fill-current"
+                className="fill-current"
               >
                 <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
               </svg>
@@ -619,7 +658,7 @@ function App() {
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
-                class="fill-current"
+                className="fill-current"
               >
                 <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
               </svg>
@@ -630,7 +669,7 @@ function App() {
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
-                class="fill-current"
+                className="fill-current"
               >
                 <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
               </svg>
