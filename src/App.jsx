@@ -1,6 +1,9 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
+import lawyerImage from "../src/assets/other_images/lawyer.jfif";
+import blog1 from "../src/assets/other_images/Lawyer-writing.jpg";
+import blog2 from "../src/assets/other_images/legal-advice.jfif";
 import "./App.css";
 import { BsBagDash } from "react-icons/bs";
 import { AiOutlineTwitter } from "react-icons/ai";
@@ -10,7 +13,7 @@ import { BsFacebook } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 function App() {
   const [count, setCount] = useState(0);
-
+  // console.log(lawyerImage);
   return (
     <>
       <header>
@@ -317,7 +320,7 @@ function App() {
           <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-5 gap-20">
             <div>
               <div className="relative bg-base-100 shadow-xl pb-3">
-                <img src="/src/assets/other_images/lawyer.jfif" alt="lawyer" />
+                <img src={lawyerImage} alt="lawyer" />
               </div>
               <div className="p-3 -ml-3 -mt-16 relative z-50 flex justify-center bg-base-100 rounded-lg shadow-xl w-[200px]">
                 <div>
@@ -340,7 +343,7 @@ function App() {
             </div>
             <div>
               <div className="relative bg-base-100 shadow-xl pb-3">
-                <img src="/src/assets/other_images/lawyer.jfif" alt="lawyer" />
+                <img src={lawyerImage} alt="lawyer" />
               </div>
               <div className="p-3 -ml-3 -mt-16 relative z-50 flex justify-center bg-base-100 rounded-lg shadow-xl w-[200px]">
                 <div>
@@ -363,7 +366,7 @@ function App() {
             </div>
             <div>
               <div className="relative bg-base-100 shadow-xl pb-3">
-                <img src="/src/assets/other_images/lawyer.jfif" alt="lawyer" />
+                <img src={lawyerImage} alt="lawyer" />
               </div>
               <div className="p-3 -ml-3 -mt-16 relative z-50 flex justify-center bg-base-100 rounded-lg shadow-xl w-[200px]">
                 <div>
@@ -390,11 +393,7 @@ function App() {
         <section className="bg-[#1F2732] py-20 text-white">
           <h1 className="text-4xl text-center pb-5">Recent Blogs</h1>
           <div className="max-w-[1200px] mx-auto px-5 flex flex-col md:flex-row justify-center items-center gap-5 w-full">
-            <img
-              className="md:w-1/2"
-              src="/src/assets/other_images/lawyer-writing.jpg"
-              alt=""
-            />
+            <img className="md:w-1/2" src={blog1} alt="" />
             <div className="md:w-1/2">
               <p className="text-[#D1B06B] pb-1">
                 Criminal Law, Kidnapping | Sunday, July 24, 2022
@@ -420,7 +419,7 @@ function App() {
           <div className="max-w-[1200px] mx-auto my-20 border border-gray-700"></div>
           <div className=" max-w-[1200px] mx-auto px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <div className="max-w-[1200px] mx-auto px-5">
-              <img src="/src/assets/other_images/legal-advice.jfif" alt="" />
+              <img src={blog2} alt="" />
               <div className="pt-10">
                 <p className="text-[#D1B06B] pb-1">
                   Legal Advice | Sunday, July 24, 2022
@@ -444,7 +443,7 @@ function App() {
               </div>
             </div>
             <div className="max-w-[1200px] mx-auto px-5">
-              <img src="/src/assets/other_images/legal-advice.jfif" alt="" />
+              <img src={blog2} alt="" />
               <div className="pt-10">
                 <p className="text-[#D1B06B] pb-1">
                   Legal Advice | Sunday, July 24, 2022
@@ -468,7 +467,7 @@ function App() {
               </div>
             </div>
             <div className="max-w-[1200px] mx-auto px-5">
-              <img src="/src/assets/other_images/legal-advice.jfif" alt="" />
+              <img src={blog2} alt="" />
               <div className="pt-10">
                 <p className="text-[#D1B06B] pb-1">
                   Legal Advice | Sunday, July 24, 2022
@@ -492,7 +491,7 @@ function App() {
               </div>
             </div>
             <div className="max-w-[1200px] mx-auto px-5">
-              <img src="/src/assets/other_images/legal-advice.jfif" alt="" />
+              <img src={blog2} alt="" />
               <div className="pt-10">
                 <p className="text-[#D1B06B] pb-1">
                   Legal Advice | Sunday, July 24, 2022
@@ -516,7 +515,7 @@ function App() {
               </div>
             </div>
             <div className="max-w-[1200px] mx-auto px-5">
-              <img src="/src/assets/other_images/legal-advice.jfif" alt="" />
+              <img src={blog2} alt="" />
               <div className="pt-10">
                 <p className="text-[#D1B06B] pb-1">
                   Legal Advice | Sunday, July 24, 2022
