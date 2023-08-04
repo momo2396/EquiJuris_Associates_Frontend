@@ -2,8 +2,12 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import Test from "./Test";
 import { BsBagDash } from "react-icons/bs";
+import { AiOutlineTwitter } from "react-icons/ai";
+import { AiFillHeart } from "react-icons/ai";
+import { AiFillStar } from "react-icons/ai";
+import { BsFacebook } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -97,6 +101,55 @@ function App() {
         </div>
       </header>
       <main>
+        <section className="py-20">
+          <h3 className="pb-10 text-3xl font-medium text-center max-w-[753px]mx-auto">
+            If you're in trouble<br></br> we can help.
+          </h3>
+          <p className="text-center max-w-[753px] mx-auto">
+            There are of Lorem Ipsum available, but the majority have su
+            alteration in some form, by injected humour, oir which don't look
+            even slightly believable.
+          </p>
+          <div className="max-w-[1200px] mx-auto px-5 pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-5">
+            <div className="bg-gray-100 border py-3 px-5 flex items-center gap-3">
+              <div className="border-2 border-[#D1B06B] rounded-full p-3">
+                <AiFillHeart className="text-[#D1B06B]" />
+                <h4>1234</h4>
+              </div>
+              <div>
+                <h2 className="text-lg font-bold">Trusted Clients</h2>
+                <p className="text-sm text-[#909090]">
+                  There are of Lorem Ipsum
+                </p>
+              </div>
+            </div>
+            <div className="bg-gray-100 border py-3 px-5 flex items-center gap-3">
+              <div className="border-2 border-[#D1B06B] rounded-full p-3">
+                <AiFillStar className="text-[#D1B06B]" />
+                <h4>98%</h4>
+              </div>
+              <div>
+                <h2 className="text-lg font-bold">Successful Cases</h2>
+                <p className="text-sm text-[#909090]">
+                  There are of Lorem Ipsum
+                </p>
+              </div>
+            </div>
+            <div className="bg-gray-100 border py-3 px-5 flex items-center gap-3">
+              <div className="border-2 border-[#D1B06B] rounded-full p-3">
+                <AiFillHeart className="text-[#D1B06B]" />
+                <h4>200+</h4>
+              </div>
+              <div>
+                <h2 className="text-lg font-bold">Criminal Defense Case</h2>
+                <p className="text-sm text-[#909090]">
+                  There are of Lorem Ipsum
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* practice area: m */}
         <section className="text-white bg-[#161D27] py-10">
           <div className="flex justify-between px-5 py-10 max-w-[1300px] mx-auto w-full">
             <h3 className="">Explore Our Practice Areas</h3>
@@ -256,9 +309,240 @@ function App() {
             </div>
           </div>
         </section>
+        {/* lawyer card: m */}
+        <section className="bg-white py-20">
+          <h1 className="text-[#161D27] text-center text-3xl font-medium pb-10">
+            Our Experienced Attorney Are Ready <br></br>To answer any questions
+          </h1>
+          <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-5 gap-20">
+            <div>
+              <div className="relative bg-base-100 shadow-xl pb-3">
+                <img src="/src/assets/other_images/lawyer.jfif" alt="lawyer" />
+              </div>
+              <div className="p-3 -ml-3 -mt-16 relative z-50 flex justify-center bg-base-100 rounded-lg shadow-xl w-[200px]">
+                <div>
+                  <div className="flex justify-between">
+                    <button className="btn bg-transparent border-none">
+                      <BsFacebook className="text-3xl" />
+                    </button>
+                    <button className="btn bg-transparent border-none">
+                      <AiOutlineTwitter className="text-3xl" />
+                    </button>
+                    <button className="btn bg-transparent border-none">
+                      <BsInstagram className="text-3xl" />
+                    </button>
+                  </div>
+                  <div className="border border-[#D1B06B] my-3 w-[180px]"></div>
+                  <h1 className="text-center pb-3">Thomas Daniyel</h1>
+                  <p className="text-[#D1B06B] text-center">Civil Attorney</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="relative bg-base-100 shadow-xl pb-3">
+                <img src="/src/assets/other_images/lawyer.jfif" alt="lawyer" />
+              </div>
+              <div className="p-3 -ml-3 -mt-16 relative z-50 flex justify-center bg-base-100 rounded-lg shadow-xl w-[200px]">
+                <div>
+                  <div className="flex justify-between">
+                    <button className="btn bg-transparent border-none">
+                      <BsFacebook className="text-3xl" />
+                    </button>
+                    <button className="btn bg-transparent border-none">
+                      <AiOutlineTwitter className="text-3xl" />
+                    </button>
+                    <button className="btn bg-transparent border-none">
+                      <BsInstagram className="text-3xl" />
+                    </button>
+                  </div>
+                  <div className="border border-[#D1B06B] my-3 w-[180px]"></div>
+                  <h1 className="text-center pb-3">Thomas Daniyel</h1>
+                  <p className="text-[#D1B06B] text-center">Civil Attorney</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="relative bg-base-100 shadow-xl pb-3">
+                <img src="/src/assets/other_images/lawyer.jfif" alt="lawyer" />
+              </div>
+              <div className="p-3 -ml-3 -mt-16 relative z-50 flex justify-center bg-base-100 rounded-lg shadow-xl w-[200px]">
+                <div>
+                  <div className="flex justify-between">
+                    <button className="btn bg-transparent border-none">
+                      <BsFacebook className="text-3xl" />
+                    </button>
+                    <button className="btn bg-transparent border-none">
+                      <AiOutlineTwitter className="text-3xl" />
+                    </button>
+                    <button className="btn bg-transparent border-none">
+                      <BsInstagram className="text-3xl" />
+                    </button>
+                  </div>
+                  <div className="border border-[#D1B06B] my-3 w-[180px]"></div>
+                  <h1 className="text-center pb-3">Thomas Daniyel</h1>
+                  <p className="text-[#D1B06B] text-center">Civil Attorney</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* blog card: m */}
+        <section className="bg-[#1F2732] py-20 text-white">
+          <h1 className="text-4xl text-center pb-5">Recent Blogs</h1>
+          <div className="max-w-[1200px] mx-auto px-5 flex flex-col md:flex-row justify-center items-center gap-5 w-full">
+            <img
+              className="md:w-1/2"
+              src="/src/assets/other_images/lawyer-writing.jpg"
+              alt=""
+            />
+            <div className="md:w-1/2">
+              <p className="text-[#D1B06B] pb-1">
+                Criminal Law, Kidnapping | Sunday, July 24, 2022
+              </p>
+              <div className="border border-gray-700 mb-5"></div>
+              <h3 className="text-2xl font-bold pb-2">
+                An Independent Examination Of Charity Accounts
+              </h3>
+              <p>
+                There are of Lorem Ipsum available, but the majority have su
+                alteration in some form, by injected oir which don't look even
+                slightly believable.
+              </p>
+              <ul>
+                <li>
+                  <a className="text-[#D1B06B] underline" href="">
+                    Read More
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="max-w-[1200px] mx-auto my-20 border border-gray-700"></div>
+          <div className=" max-w-[1200px] mx-auto px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="max-w-[1200px] mx-auto px-5">
+              <img src="/src/assets/other_images/legal-advice.jfif" alt="" />
+              <div className="pt-10">
+                <p className="text-[#D1B06B] pb-1">
+                  Legal Advice | Sunday, July 24, 2022
+                </p>
+                <div className="border border-gray-700 mb-5"></div>
+                <h3 className="text-2xl font-bold pb-2">
+                  Prevent A Further Breach of The Peace In The States
+                </h3>
+                <p>
+                  There are of Lorem Ipsum available, but the majority have su
+                  alteration in some form, by injected oir which don't look even
+                  slightly believable.
+                </p>
+                <ul>
+                  <li>
+                    <a className="text-[#D1B06B] underline" href="">
+                      Read More
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="max-w-[1200px] mx-auto px-5">
+              <img src="/src/assets/other_images/legal-advice.jfif" alt="" />
+              <div className="pt-10">
+                <p className="text-[#D1B06B] pb-1">
+                  Legal Advice | Sunday, July 24, 2022
+                </p>
+                <div className="border border-gray-700 mb-5"></div>
+                <h3 className="text-2xl font-bold pb-2">
+                  Prevent A Further Breach of The Peace In The States
+                </h3>
+                <p>
+                  There are of Lorem Ipsum available, but the majority have su
+                  alteration in some form, by injected oir which don't look even
+                  slightly believable.
+                </p>
+                <ul>
+                  <li>
+                    <a className="text-[#D1B06B] underline" href="">
+                      Read More
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="max-w-[1200px] mx-auto px-5">
+              <img src="/src/assets/other_images/legal-advice.jfif" alt="" />
+              <div className="pt-10">
+                <p className="text-[#D1B06B] pb-1">
+                  Legal Advice | Sunday, July 24, 2022
+                </p>
+                <div className="border border-gray-700 mb-5"></div>
+                <h3 className="text-2xl font-bold pb-2">
+                  Prevent A Further Breach of The Peace In The States
+                </h3>
+                <p>
+                  There are of Lorem Ipsum available, but the majority have su
+                  alteration in some form, by injected oir which don't look even
+                  slightly believable.
+                </p>
+                <ul>
+                  <li>
+                    <a className="text-[#D1B06B] underline" href="">
+                      Read More
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="max-w-[1200px] mx-auto px-5">
+              <img src="/src/assets/other_images/legal-advice.jfif" alt="" />
+              <div className="pt-10">
+                <p className="text-[#D1B06B] pb-1">
+                  Legal Advice | Sunday, July 24, 2022
+                </p>
+                <div className="border border-gray-700 mb-5"></div>
+                <h3 className="text-2xl font-bold pb-2">
+                  Prevent A Further Breach of The Peace In The States
+                </h3>
+                <p>
+                  There are of Lorem Ipsum available, but the majority have su
+                  alteration in some form, by injected oir which don't look even
+                  slightly believable.
+                </p>
+                <ul>
+                  <li>
+                    <a className="text-[#D1B06B] underline" href="">
+                      Read More
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="max-w-[1200px] mx-auto px-5">
+              <img src="/src/assets/other_images/legal-advice.jfif" alt="" />
+              <div className="pt-10">
+                <p className="text-[#D1B06B] pb-1">
+                  Legal Advice | Sunday, July 24, 2022
+                </p>
+                <div className="border border-gray-700 mb-5"></div>
+                <h3 className="text-2xl font-bold pb-2">
+                  Prevent A Further Breach of The Peace In The States
+                </h3>
+                <p>
+                  There are of Lorem Ipsum available, but the majority have su
+                  alteration in some form, by injected oir which don't look even
+                  slightly believable.
+                </p>
+                <ul>
+                  <li>
+                    <a className="text-[#D1B06B] underline" href="">
+                      Read More
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <footer></footer>
-      <Test />
     </>
   );
 }
