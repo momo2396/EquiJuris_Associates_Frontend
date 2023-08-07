@@ -2,6 +2,8 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import lawyerImage from "../src/assets/other_images/lawyer.jfif";
+import lawyerImage1 from "../src/assets/other_images/lawyer2.jpg";
+import lawyerImage2 from "../src/assets/other_images/lawyer3.jpg";
 import blog1 from "../src/assets/other_images/Lawyer-writing.jpg";
 import blog2 from "../src/assets/other_images/legal-advice.jfif";
 import "./App.css";
@@ -92,11 +94,9 @@ function App() {
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content m-20">
             <div className="max-w-md">
-              <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+              <h1 className="mb-5 text-5xl font-bold">Welcome to EquiJuris Associates</h1>
               <p className="mb-5">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                assumenda excepturi exercitationem quasi. In deleniti eaque aut
-                repudiandae et a id nisi.
+              We stand for justice and champion your rights. With our experienced team of attorneys, your legal matters are in capable hands. Trust us to advocate for your best interests every step of the way.
               </p>
               <button className="btn btn-primary">Get Started</button>
             </div>
@@ -157,20 +157,16 @@ function App() {
           <div className="flex justify-between px-5 py-10 max-w-[1300px] mx-auto w-full">
             <h3 className="">Explore Our Practice Areas</h3>
             <p className="flex justify-end w-1/2">
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have su alteration in some form, by injected
-              humour, oir randomised workds which don't look even slightly
-              believable.
+            At EquiJuris Associates, we offer a wide range of legal services to meet your needs. From business law and family matters to estate planning and more, our experienced team is here to provide personalized solutions and dedicated representation. Explore our practice areas and let us assist you in achieving your legal goals. Contact us for a consultation today.
             </p>
           </div>
           <div className="px-5 max-w-[1300px] mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               <div className="card bg-[#1F2732] shadow-xl border-2 border-[#D1B06B] rounded-md">
                 <div className="card-body">
-                  <h2 className="card-title">Business Law</h2>
+                  <h2 className="card-title">Corporate and Commercial Law</h2>
                   <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but majority going to use a passage.
+                  This area covers matters related to business and corporate entities, including company formation, contracts, mergers and acquisitions, and corporate governance.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -183,10 +179,9 @@ function App() {
               </div>
               <div className="card bg-[#1F2732] shadow-xl border-2 border-[#D1B06B] rounded-md">
                 <div className="card-body">
-                  <h2 className="card-title">Business Law</h2>
+                  <h2 className="card-title">Civil Law</h2>
                   <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but majority going to use a passage.
+                  Civil law governs disputes between individuals or entities, including issues related to contracts, property, family matters, and torts.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -199,10 +194,9 @@ function App() {
               </div>
               <div className="card bg-[#1F2732] shadow-xl border-2 border-[#D1B06B] rounded-md">
                 <div className="card-body">
-                  <h2 className="card-title">Business Law</h2>
+                  <h2 className="card-title">Criminal Law</h2>
                   <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but majority going to use a passage.
+                  Criminal law deals with offenses against the state or society and includes crimes such as theft, murder, fraud, and other criminal activities. It encompasses the Bangladesh Penal Code and Criminal Procedure Code.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -215,10 +209,9 @@ function App() {
               </div>
               <div className="card bg-[#1F2732] shadow-xl border-2 border-[#D1B06B] rounded-md">
                 <div className="card-body">
-                  <h2 className="card-title">Business Law</h2>
+                  <h2 className="card-title">Intellectual Property Law</h2>
                   <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but majority going to use a passage.
+                  This area protects the rights of creators and inventors by governing patents, trademarks, copyrights, and trade secrets.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -231,10 +224,9 @@ function App() {
               </div>
               <div className="card bg-[#1F2732] shadow-xl border-2 border-[#D1B06B] rounded-md">
                 <div className="card-body">
-                  <h2 className="card-title">Business Law</h2>
+                  <h2 className="card-title">Family Law</h2>
                   <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but majority going to use a passage.
+                  Family law deals with matters concerning marriage, divorce, inheritance, child custody, and other family-related issues.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -247,10 +239,9 @@ function App() {
               </div>
               <div className="card bg-[#1F2732] shadow-xl border-2 border-[#D1B06B] rounded-md">
                 <div className="card-body">
-                  <h2 className="card-title">Business Law</h2>
+                  <h2 className="card-title">Tax Law</h2>
                   <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but majority going to use a passage.
+                  Tax laws determine the taxation system in the country and regulate how taxes are imposed and collected.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -263,10 +254,9 @@ function App() {
               </div>
               <div className="card bg-[#1F2732] shadow-xl border-2 border-[#D1B06B] rounded-md">
                 <div className="card-body">
-                  <h2 className="card-title">Business Law</h2>
+                  <h2 className="card-title">Tax Law</h2>
                   <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but majority going to use a passage.
+                  Tax laws determine the taxation system in the country and regulate how taxes are imposed and collected.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -279,10 +269,9 @@ function App() {
               </div>
               <div className="card bg-[#1F2732] shadow-xl border-2 border-[#D1B06B] rounded-md">
                 <div className="card-body">
-                  <h2 className="card-title">Business Law</h2>
+                  <h2 className="card-title">Banking and Finance Law</h2>
                   <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but majority going to use a passage.
+                  This area covers regulations and practices in the banking and financial sectors, including banking laws, securities regulations, and financial transactions.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -295,10 +284,9 @@ function App() {
               </div>
               <div className="card bg-[#1F2732] shadow-xl border-2 border-[#D1B06B] rounded-md">
                 <div className="card-body">
-                  <h2 className="card-title">Business Law</h2>
+                  <h2 className="card-title">Administrative Law</h2>
                   <p>
-                    There are many variations of passages of Lorem Ipsum
-                    available, but majority going to use a passage.
+                  Administrative law deals with the legal principles governing the actions and decisions of government authorities and public officials.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -343,7 +331,7 @@ function App() {
             </div>
             <div>
               <div className="relative bg-base-100 shadow-xl pb-3">
-                <img src={lawyerImage} alt="lawyer" />
+                <img src={lawyerImage1} alt="lawyer" />
               </div>
               <div className="p-3 -ml-3 -mt-16 relative z-50 flex justify-center bg-base-100 rounded-lg shadow-xl w-[200px]">
                 <div>
@@ -359,14 +347,14 @@ function App() {
                     </button>
                   </div>
                   <div className="border border-[#D1B06B] my-3 w-[180px]"></div>
-                  <h1 className="text-center pb-3">Thomas Daniyel</h1>
-                  <p className="text-[#D1B06B] text-center">Civil Attorney</p>
+                  <h1 className="text-center pb-3">Jennifer Parker</h1>
+                  <p className="text-[#D1B06B] text-center">Corporate Attorney</p>
                 </div>
               </div>
             </div>
             <div>
               <div className="relative bg-base-100 shadow-xl pb-3">
-                <img src={lawyerImage} alt="lawyer" />
+                <img src={lawyerImage2} alt="lawyer" />
               </div>
               <div className="p-3 -ml-3 -mt-16 relative z-50 flex justify-center bg-base-100 rounded-lg shadow-xl w-[200px]">
                 <div>
@@ -382,13 +370,14 @@ function App() {
                     </button>
                   </div>
                   <div className="border border-[#D1B06B] my-3 w-[180px]"></div>
-                  <h1 className="text-center pb-3">Thomas Daniyel</h1>
-                  <p className="text-[#D1B06B] text-center">Civil Attorney</p>
+                  <h1 className="text-center pb-3">Charlotte Turner</h1>
+                  <p className="text-[#D1B06B] text-center">Tax Attorney</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
+<<<<<<< Updated upstream
         {/* appointment section */}
         <div class="flex justify-center  items-center w-screen m-auto bg-[#1f2732]">
             <div class="container w-full m-auto my-4 px-4 lg:px-20">
@@ -414,6 +403,87 @@ function App() {
                     </button>
                   </div>
 			          </div>
+=======
+        <section className="bg-[#1F2732] text-white py-20">
+          <h1 className="text-center text-3xl font-medium pb-10">
+            Top Client Opinions & Reviews
+          </h1>
+          <div className="max-w-[1200px] mx-auto px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="bg-[#2E3947] rounded-bl-2xl p-10">
+              <ImQuotesLeft className="text-[#D1B06B] text-3xl" />
+              <p className="py-5 text-[#D7D7D7]">
+              ⭐⭐⭐⭐⭐<br />
+              "Expertise and Dedication"
+               <br />
+               Working with EquiJuris Associates was a game-changer for my case. Their team demonstrated exceptional expertise and dedication in handling my legal matter. They listened attentively to my concerns and kept me informed throughout the entire process. I couldn't have asked for a better team to have by my side."
+              </p>
+              <h3 className="text-lg font-bold">Asif</h3>
+              <p className="text-[#D7D7D7] text-sm">Business Man</p>
+            </div>
+            <div className="bg-[#2E3947] rounded-bl-2xl p-10">
+              <ImQuotesLeft className="text-[#D1B06B] text-3xl" />
+              <p className="py-5 text-[#D7D7D7]">
+              ⭐⭐⭐⭐⭐<br />
+              "Professional and Caring" <br />
+              I highly recommend EquiJuris Asscoiates to anyone in need of legal assistance. Their lawyers are not only highly professional and knowledgeable, but they genuinely care about their clients. They took the time to understand my situation and provided me with clear guidance and support. I'm grateful for their help during a challenging time.
+              </p>
+              <h3 className="text-lg font-bold">Momo</h3>
+              <p className="text-[#D7D7D7] text-sm">CEO, XYZ Corporation</p>
+            </div>
+            <div className="bg-[#2E3947] rounded-bl-2xl p-10">
+              <ImQuotesLeft className="text-[#D1B06B] text-3xl" />
+              <p className="py-5 text-[#D7D7D7]">
+              ⭐⭐⭐⭐<br />
+              "Skilled Negotiators" <br />
+              I am pleased with the legal services provided by EquiJuris Associates. Their team proved to be skilled negotiators and achieved a favorable settlement for my case. My only suggestion for improvement would be to enhance communication between updates.
+              </p>
+              <h3 className="text-lg font-bold">Mahmud</h3>
+              <p className="text-[#D7D7D7] text-sm">Real Estate Investor</p>
+            </div>
+          </div>
+        </section>
+        {/* appointment section */}
+        <section>
+          <div className="flex justify-center items-center mx-auto appointment_background py-20">
+            <div className="container w-full m-auto my-4 px-4 lg:px-20">
+              <div className="w-full p-8 my-4 md:px-12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl bg-[#141516]">
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
+                  <input
+                    className="w-full bg-[#141516] text-white mt-2 p-3 border-b-[1px] placeholder-gray-400 border-slate-400 focus:outline-none focus:shadow-outline"
+                    type="text"
+                    placeholder="Full Name*"
+                  />
+                  <input
+                    className="w-full bg-[#141516] text-white mt-2 p-3 border-b-[1px] placeholder-gray-400  border-slate-400 focus:outline-none focus:shadow-outline"
+                    type="email"
+                    placeholder="Email Address*"
+                  />
+                  <input
+                    className="w-full bg-[#141516] text-white mt-2 p-3 border-b-[1px] placeholder-gray-400 border-slate-400 focus:outline-none focus:shadow-outline "
+                    type="text"
+                    placeholder="Phone Number*"
+                  />
+                  <input
+                    className="w-full bg-[#141516] text-white mt-2 p-3 border-b-[1px] placeholder-gray-400 border-slate-400 focus:outline-none focus:shadow-outline"
+                    type="text"
+                    placeholder="Subject*"
+                  />
+                </div>
+                <div className="my-4">
+                  <textarea
+                    placeholder="Your Message*"
+                    className="w-full h-32 bg-[#141516] placeholder-gray-400 text-white mt-2 p-3 border-b-[1px] border-slate-400 focus:outline-none focus:shadow-outline"
+                  ></textarea>
+                </div>
+                <div className="mt-10  flex items-center justify-center">
+                  <button
+                    className="btn capitalize text-sm font-bold tracking-wide bg-white text-black p-3 rounded-lg 
+                    hover:bg-[#D1B06B] hover:border-[#D1B06B]         focus:outline-none focus:shadow-outline"
+                  >
+                    Get An Appointment
+                  </button>
+                </div>
+>>>>>>> Stashed changes
               </div>
           </div>
 
