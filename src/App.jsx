@@ -43,21 +43,48 @@ function App() {
                 className="relative menu menu-sm dropdown-content mt-3 p-2 shadow bg-black backdrop-blur-lg z-50 rounded-box w-52"
               >
                 <li>
-                  <a>Item 1</a>
+                  <a>Home</a>
                 </li>
                 <li>
-                  <a>Parent</a>
+                  <a>About Us</a>
+                </li>
+                <li>
+                  <a>Contact</a>
+                </li>
+                <li>
+                  <a>Our Attorneys</a>
+                </li>
+                <li>
+                  <a>Practice Areas</a>
                   <ul className="p-2">
                     <li>
-                      <a>Submenu 1</a>
+                      <a>Corporate and Commercial Law</a>
                     </li>
                     <li>
-                      <a>Submenu 2</a>
+                      <a>Civil Law</a>
+                    </li>
+                    <li>
+                      <a>Criminal Law</a>
+                    </li>
+                    <li>
+                      <a>Intellectual Property Law</a>
+                    </li>
+                    <li>
+                      <a>Labor Law</a>
+                    </li>
+                    <li>
+                      <a>Banking and Finance Law</a>
+                    </li>
+                    <li>
+                      <a>Administrative Law</a>
+                    </li>
+                    <li>
+                      <a>Family Law</a>
+                    </li>
+                    <li>
+                      <a>Tax Law</a>
                     </li>
                   </ul>
-                </li>
-                <li>
-                  <a>Item 3</a>
                 </li>
               </ul>
             </div>
@@ -68,23 +95,50 @@ function App() {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
               <li>
-                <a>Item 1</a>
+                <a>Home</a>
+              </li>
+              <li>
+                <a>About Us</a>
+              </li>
+              <li>
+                <a>Contact</a>
+              </li>
+              <li>
+                <a>Our Attorneys</a>
               </li>
               <li tabIndex={0}>
                 <details>
-                  <summary>Parent</summary>
+                  <summary>Practice Areas</summary>
                   <ul className="p-2 bg-black backdrop-blur-lg">
                     <li>
-                      <a>Submenu 1</a>
+                      <a>Corporate and Commercial Law</a>
                     </li>
                     <li>
-                      <a>Submenu 2</a>
+                      <a>Civil Law</a>
+                    </li>
+                    <li>
+                      <a>Criminal Law</a>
+                    </li>
+                    <li>
+                      <a>Intellectual Property Law</a>
+                    </li>
+                    <li>
+                      <a>Labor Law</a>
+                    </li>
+                    <li>
+                      <a>Banking and Finance Law</a>
+                    </li>
+                    <li>
+                      <a>Administrative Law</a>
+                    </li>
+                    <li>
+                      <a>Family Law</a>
+                    </li>
+                    <li>
+                      <a>Tax Law</a>
                     </li>
                   </ul>
                 </details>
-              </li>
-              <li>
-                <a>Item 3</a>
               </li>
             </ul>
           </div>
@@ -94,13 +148,18 @@ function App() {
         </div>
         <div className="hero min-h-[80vh] my_banner bg-cover bg-no-repeat">
           <div className="hero-overlay bg-opacity-60"></div>
-          <div className="hero-content text-center text-neutral-content m-20">
+          <div className="hero-content text-center text-neutral-content ">
             <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Welcome to EquiJuris Associates</h1>
+              <h1 className="mb-5 text-5xl font-bold">
+                Welcome to EquiJuris Associates
+              </h1>
               <p className="mb-5">
-              We stand for justice and champion your rights. With our experienced team of attorneys, your legal matters are in capable hands. Trust us to advocate for your best interests every step of the way.
+                We stand for justice and champion your rights. With our
+                experienced team of attorneys, your legal matters are in capable
+                hands. Trust us to advocate for your best interests every step
+                of the way.
               </p>
-              <button className="btn btn-primary">Get Started</button>
+              {/* <button className="btn btn-primary">Get Started</button> */}
             </div>
           </div>
         </div>
@@ -161,7 +220,12 @@ function App() {
           <div className="flex justify-between px-5 py-10 max-w-[1300px] mx-auto w-full">
             <h3 className="">Explore Our Practice Areas</h3>
             <p className="flex justify-end w-1/2">
-            At EquiJuris Associates, we offer a wide range of legal services to meet your needs. From business law and family matters to estate planning and more, our experienced team is here to provide personalized solutions and dedicated representation. Explore our practice areas and let us assist you in achieving your legal goals. Contact us for a consultation today.
+              At EquiJuris Associates, we offer a wide range of legal services
+              to meet your needs. From business law and family matters to estate
+              planning and more, our experienced team is here to provide
+              personalized solutions and dedicated representation. Explore our
+              practice areas and let us assist you in achieving your legal
+              goals. Contact us for a consultation today.
             </p>
           </div>
           <div className="px-5 max-w-[1300px] mx-auto">
@@ -170,7 +234,9 @@ function App() {
                 <div className="card-body">
                   <h2 className="card-title">Corporate and Commercial Law</h2>
                   <p>
-                  This area covers matters related to business and corporate entities, including company formation, contracts, mergers and acquisitions, and corporate governance.
+                    This area covers matters related to business and corporate
+                    entities, including company formation, contracts, mergers
+                    and acquisitions, and corporate governance.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -185,7 +251,9 @@ function App() {
                 <div className="card-body">
                   <h2 className="card-title">Civil Law</h2>
                   <p>
-                  Civil law governs disputes between individuals or entities, including issues related to contracts, property, family matters, and torts.
+                    Civil law governs disputes between individuals or entities,
+                    including issues related to contracts, property, family
+                    matters, and torts.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -200,7 +268,10 @@ function App() {
                 <div className="card-body">
                   <h2 className="card-title">Criminal Law</h2>
                   <p>
-                  Criminal law deals with offenses against the state or society and includes crimes such as theft, murder, fraud, and other criminal activities. It encompasses the Bangladesh Penal Code and Criminal Procedure Code.
+                    Criminal law deals with offenses against the state or
+                    society and includes crimes such as theft, murder, fraud,
+                    and other criminal activities. It encompasses the Bangladesh
+                    Penal Code and Criminal Procedure Code.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -215,7 +286,9 @@ function App() {
                 <div className="card-body">
                   <h2 className="card-title">Intellectual Property Law</h2>
                   <p>
-                  This area protects the rights of creators and inventors by governing patents, trademarks, copyrights, and trade secrets.
+                    This area protects the rights of creators and inventors by
+                    governing patents, trademarks, copyrights, and trade
+                    secrets.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -230,7 +303,8 @@ function App() {
                 <div className="card-body">
                   <h2 className="card-title">Family Law</h2>
                   <p>
-                  Family law deals with matters concerning marriage, divorce, inheritance, child custody, and other family-related issues.
+                    Family law deals with matters concerning marriage, divorce,
+                    inheritance, child custody, and other family-related issues.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -245,7 +319,8 @@ function App() {
                 <div className="card-body">
                   <h2 className="card-title">Tax Law</h2>
                   <p>
-                  Tax laws determine the taxation system in the country and regulate how taxes are imposed and collected.
+                    Tax laws determine the taxation system in the country and
+                    regulate how taxes are imposed and collected.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -260,7 +335,9 @@ function App() {
                 <div className="card-body">
                   <h2 className="card-title">Labor Law</h2>
                   <p>
-                  Labor laws govern the rights and responsibilities of workers and employers. These laws cover areas such as employment conditions, wages, benefits, and labor disputes.
+                    Labor laws govern the rights and responsibilities of workers
+                    and employers. These laws cover areas such as employment
+                    conditions, wages, benefits, and labor disputes.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -275,7 +352,9 @@ function App() {
                 <div className="card-body">
                   <h2 className="card-title">Banking and Finance Law</h2>
                   <p>
-                  This area covers regulations and practices in the banking and financial sectors, including banking laws, securities regulations, and financial transactions.
+                    This area covers regulations and practices in the banking
+                    and financial sectors, including banking laws, securities
+                    regulations, and financial transactions.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -290,7 +369,9 @@ function App() {
                 <div className="card-body">
                   <h2 className="card-title">Administrative Law</h2>
                   <p>
-                  Administrative law deals with the legal principles governing the actions and decisions of government authorities and public officials.
+                    Administrative law deals with the legal principles governing
+                    the actions and decisions of government authorities and
+                    public officials.
                   </p>
                   <div className="border border-gray-700 mt-5"></div>
                   <div className="flex justify-between items-center card-actions mt-10">
@@ -352,7 +433,9 @@ function App() {
                   </div>
                   <div className="border border-[#D1B06B] my-3 w-[180px]"></div>
                   <h1 className="text-center pb-3">Jennifer Parker</h1>
-                  <p className="text-[#D1B06B] text-center">Corporate Attorney</p>
+                  <p className="text-[#D1B06B] text-center">
+                    Corporate Attorney
+                  </p>
                 </div>
               </div>
             </div>
@@ -390,10 +473,16 @@ function App() {
             <div className="bg-[#2E3947] rounded-bl-2xl p-10">
               <ImQuotesLeft className="text-[#D1B06B] text-3xl" />
               <p className="py-5 text-[#D7D7D7]">
-              ⭐⭐⭐⭐⭐<br />
-              "Expertise and Dedication"
-               <br />
-               Working with EquiJuris Associates was a game-changer for my case. Their team demonstrated exceptional expertise and dedication in handling my legal matter. They listened attentively to my concerns and kept me informed throughout the entire process. I couldn't have asked for a better team to have by my side."
+                ⭐⭐⭐⭐⭐
+                <br />
+                "Expertise and Dedication"
+                <br />
+                Working with EquiJuris Associates was a game-changer for my
+                case. Their team demonstrated exceptional expertise and
+                dedication in handling my legal matter. They listened
+                attentively to my concerns and kept me informed throughout the
+                entire process. I couldn't have asked for a better team to have
+                by my side."
               </p>
               <h3 className="text-lg font-bold">Asif</h3>
               <p className="text-[#D7D7D7] text-sm">Business Man</p>
@@ -401,9 +490,14 @@ function App() {
             <div className="bg-[#2E3947] rounded-bl-2xl p-10">
               <ImQuotesLeft className="text-[#D1B06B] text-3xl" />
               <p className="py-5 text-[#D7D7D7]">
-              ⭐⭐⭐⭐⭐<br />
-              "Professional and Caring" <br />
-              I highly recommend EquiJuris Asscoiates to anyone in need of legal assistance. Their lawyers are not only highly professional and knowledgeable, but they genuinely care about their clients. They took the time to understand my situation and provided me with clear guidance and support. I'm grateful for their help during a challenging time.
+                ⭐⭐⭐⭐⭐
+                <br />
+                "Professional and Caring" <br />I highly recommend EquiJuris
+                Asscoiates to anyone in need of legal assistance. Their lawyers
+                are not only highly professional and knowledgeable, but they
+                genuinely care about their clients. They took the time to
+                understand my situation and provided me with clear guidance and
+                support. I'm grateful for their help during a challenging time.
               </p>
               <h3 className="text-lg font-bold">Momo</h3>
               <p className="text-[#D7D7D7] text-sm">CEO, XYZ Corporation</p>
@@ -411,9 +505,13 @@ function App() {
             <div className="bg-[#2E3947] rounded-bl-2xl p-10">
               <ImQuotesLeft className="text-[#D1B06B] text-3xl" />
               <p className="py-5 text-[#D7D7D7]">
-              ⭐⭐⭐⭐<br />
-              "Skilled Negotiators" <br />
-              I am pleased with the legal services provided by EquiJuris Associates. Their team proved to be skilled negotiators and achieved a favorable settlement for my case. My only suggestion for improvement would be to enhance communication between updates.
+                ⭐⭐⭐⭐
+                <br />
+                "Skilled Negotiators" <br />I am pleased with the legal services
+                provided by EquiJuris Associates. Their team proved to be
+                skilled negotiators and achieved a favorable settlement for my
+                case. My only suggestion for improvement would be to enhance
+                communication between updates.
               </p>
               <h3 className="text-lg font-bold">Mahmud</h3>
               <p className="text-[#D7D7D7] text-sm">Real Estate Investor</p>
@@ -627,7 +725,9 @@ function App() {
           <a className="link link-hover hover:no-underline text-xl">About</a>
           <a className="link link-hover hover:no-underline text-xl">Blog</a>
           <a className="link link-hover hover:no-underline text-xl">Lawyers</a>
-          <a className="link link-hover hover:no-underline text-xl">Practice Areas</a>
+          <a className="link link-hover hover:no-underline text-xl">
+            Practice Areas
+          </a>
         </div>
         <div>
           <div className="grid grid-flow-col gap-4">
