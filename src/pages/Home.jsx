@@ -1,6 +1,3 @@
-import React from "react";
-import Navbar from "../components/shared/Navbar";
-import Footer from "../components/shared/Footer";
 import Banner from "../components/HomeComponents/Banner";
 import Help from "../components/HomeComponents/Help";
 import PracticeArea from "../components/HomeComponents/PracticeArea";
@@ -12,7 +9,6 @@ const Home = () => {
   return (
     <div>
       <header>
-        <Navbar />
         <Banner />
       </header>
       <main>
@@ -29,7 +25,7 @@ const Home = () => {
         {/* blog Section: m */}
         <BlogSection />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
