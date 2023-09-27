@@ -1,4 +1,4 @@
-import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -26,19 +26,19 @@ const Navbar = () => {
             className="relative menu menu-sm dropdown-content mt-3 p-2 shadow bg-black backdrop-blur-lg z-50 rounded-box w-52"
           >
             <li>
-              <a>Home</a>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <a>About Us</a>
+              <NavLink to="/aboutUs">About Us</NavLink>
             </li>
             <li>
-              <a>Contact</a>
+              <NavLink to="/contact">Contact</NavLink>
             </li>
             <li>
-              <a>Our Attorneys</a>
+              <NavLink to="/ourAttorneys">Our Attorneys</NavLink>
             </li>
             <li>
-              <a>Practice Areas</a>
+              <NavLink to="/practiceAreas">Practice Areas</NavLink>
               <ul className="p-2">
                 <li>
                   <a>Corporate and Commercial Law</a>
@@ -78,20 +78,23 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <a>About Us</a>
+            <NavLink to="/aboutUs">About Us</NavLink>
           </li>
           <li>
-            <a>Contact</a>
+            <NavLink to="/contact">Contact</NavLink>
           </li>
           <li>
-            <a>Our Attorneys</a>
+            <NavLink to="/ourAttorneys">Our Attorneys</NavLink>
           </li>
           <li tabIndex={0}>
             <details>
-              <summary>Practice Areas</summary>
+              <summary>
+                {" "}
+                <NavLink to="/practiceAreas">Practice Areas</NavLink>
+              </summary>
               <ul className="p-2 bg-black backdrop-blur-lg">
                 <li>
                   <a>Corporate and Commercial Law</a>
@@ -126,8 +129,12 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-5">
-        <a className="btn">Sign Up</a>
-        <a className="btn">Sign In</a>
+        <NavLink to="/signUp" className="btn">
+          Sign Up
+        </NavLink>
+        <NavLink to="/login" className="btn">
+          Sign In
+        </NavLink>
       </div>
     </div>
   );
