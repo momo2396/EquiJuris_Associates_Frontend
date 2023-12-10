@@ -1,4 +1,3 @@
-import React from "react";
 import blog1 from "../../assets/other_images/Lawyer-writing.jpg";
 import blog2 from "../../assets/other_images/legal-advice.jfif";
 const BlogSection = () => {

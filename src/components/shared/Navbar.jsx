@@ -39,7 +39,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink to="/practiceAreas">Practice Areas</NavLink>
-              <ul className="p-2">
+              {/* <ul className="p-2">
                 <li>
                   <a>Corporate and Commercial Law</a>
                 </li>
@@ -67,7 +67,10 @@ const Navbar = () => {
                 <li>
                   <a>Tax Law</a>
                 </li>
-              </ul>
+              </ul> */}
+            </li>
+            <li>
+              <NavLink to="/blogs">Blogs</NavLink>
             </li>
           </ul>
         </div>
@@ -89,13 +92,16 @@ const Navbar = () => {
           <li>
             <NavLink to="/ourAttorneys">Our Attorneys</NavLink>
           </li>
+          <li>
+            <NavLink to="/blogs">Blogs</NavLink>
+          </li>
           <li tabIndex={0}>
             <details>
               <summary>
                 {" "}
                 <NavLink to="/practiceAreas">Practice Areas</NavLink>
               </summary>
-              <ul className="p-2 bg-black backdrop-blur-lg">
+              {/* <ul className="p-2 bg-black backdrop-blur-lg">
                 <li>
                   <a>Corporate and Commercial Law</a>
                 </li>
@@ -123,7 +129,7 @@ const Navbar = () => {
                 <li>
                   <a>Tax Law</a>
                 </li>
-              </ul>
+              </ul> */}
             </details>
           </li>
         </ul>
