@@ -1,11 +1,8 @@
-import React from "react";
 import { myBrown } from "../../utilities/color";
-import loginBanner from "../../assets/banner/scale02.jpg";
 const LoginForm = () => {
-  console.log(`bg-[url('${loginBanner}')]`);
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">
-      <div className="hidden lg:block min-h-[90vh] login_banner bg-cover bg-center">
+      <div className=" hidden lg:block min-h-[90vh] login_banner bg-cover bg-center">
         <div className="hero-overlay bg-opacity-60">
           <div className="pt-72 lg:pt-80">
             <h1 className="text-white text-center text-3xl font-bold">

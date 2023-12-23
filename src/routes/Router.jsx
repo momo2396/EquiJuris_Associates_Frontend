@@ -8,6 +8,7 @@ import AboutUs from "../pages/AboutUs";
 import PracticeAreas from "../pages/PracticeAreas";
 import Contact from "../pages/Contact";
 import OurAttorneys from "../pages/OurAttorneys";
+import AddPracticeArea from "../components/shared/AddPracticeArea";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/addPracticeArea",
+        element: <AddPracticeArea></AddPracticeArea>,
       },
     ],
   },
