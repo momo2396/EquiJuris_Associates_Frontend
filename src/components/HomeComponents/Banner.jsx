@@ -1,4 +1,3 @@
-import React from "react";
 const Banner = () => {
   return (
     <div className="hero min-h-[80vh] my_banner bg-cover bg-no-repeat">

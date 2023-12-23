@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-export const backendURL = "https://equi-juris-associates-backend.vercel.app/";
+export const backendURL = "https://equi-juris-associates-backend.vercel.app";
 const useGetData = (url) => {
   const { data, isLoading, isError, refetch } = useQuery({
     queryKey: [backendURL + url],
