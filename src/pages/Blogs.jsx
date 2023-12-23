@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const Blogs = () => {
   const [page, setPage] = useState(0);
-  const { data, isLoading } = useGetData("blogs/all-blogs");
+  const { data, isLoading } = useGetData("/blogs/all-blogs");
   if (isLoading)
     return (
       <progress className="max-w-[1300px] mx-auto progress w-56"></progress>
