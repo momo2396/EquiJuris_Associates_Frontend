@@ -11,6 +11,7 @@
   font-size: 17px;
   border: 1px solid;
   text-transform: uppercase;
+  box-shadow: 2px 2px 10px #d1b16b87;
   color: var(--color);
   z-index: 1;
 }
