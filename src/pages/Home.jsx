@@ -6,6 +6,7 @@ import ClientReviewSection from "../components/HomeComponents/ClientReviewSectio
 import AppointmentSection from "../components/HomeComponents/AppointmentSection";
 import BlogSection from "../components/HomeComponents/BlogSection";
 import BlogSingleSection from "../components/BlogSectionComp/BlogSingleSection";
+
 const Home = () => {
   return (
     <div>

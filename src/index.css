@@ -3,9 +3,9 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
-:root {
+/* :root {
   font-family: "Lato", sans-serif;
-}
+} */
 .my_banner {
   background-image: url("/src/assets/banner/scale01.jpg");
 }
@@ -14,4 +14,39 @@
 }
 .blog_banner {
   background-image: url("/src/assets/banner/scale01.jpg");
+}
+@font-face {
+  font-family: "Cormorant_Garamond";
+  font-weight: 700;
+  src: url("./assets/fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Cormorant_Garamond";
+  font-weight: 400;
+  src: url("./assets/fonts/Cormorant_Garamond/CormorantGaramond-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Cormorant_Garamond";
+  font-weight: 300;
+  src: url("./assets/fonts/Cormorant_Garamond/CormorantGaramond-Light.ttf");
+}
+
+@font-face {
+  font-family: "Cormorant_Garamond";
+  font-weight: 500;
+  src: url("./assets/fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Cormorant_Garamond";
+  font-weight: 600;
+  src: url("./assets/fonts/Cormorant_Garamond/CormorantGaramond-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Outfit";
+  /* font-weight: 700; */
+  src: url("./assets/fonts/Outfit/Outfit-VariableFont_wght.ttf");
 }

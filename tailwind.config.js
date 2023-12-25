@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      generalFont: ['"Outfit"', "sans-serif"],
+      titleFont: ['"Cormorant_Garamond"', "serif"]
+    },
   },
   plugins: [require("daisyui")],
 }
