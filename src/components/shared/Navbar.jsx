@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
+import LogoutButton from "./LogoutButton/LogoutButton";
 
 const Navbar = () => {
+  const user = true;
   return (
     <div className="navbar bg-black bg-opacity-20 backdrop-blur-lg fixed top-0 w-full text-white z-50">
       <div className="navbar-start">
@@ -135,12 +137,19 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-5">
-        <NavLink to="/signUp" className="btn">
-          Sign Up
-        </NavLink>
-        <NavLink to="/login" className="btn">
-          Sign In
-        </NavLink>
+        {!user ? (
+          <>
+            {" "}
+            <NavLink to="/signUp" className="btn">
+              Sign Up
+            </NavLink>
+            <NavLink to="/login" className="btn">
+              Sign In
+            </NavLink>
+          </>
+        ) : (
+          <LogoutButton />
+        )}
       </div>
     </div>
   );
