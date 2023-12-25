@@ -1,6 +1,7 @@
 import { BsBagDash } from "react-icons/bs";
 import useGetData from "../../routes/UseGetData";
 import { Link } from "react-router-dom";
+import OutlineButton from "../shared/OutlineButton/OutlineButton";
 
 const PracticeArea = () => {
   const { data, isLoading } = useGetData("/practiceAreas");
@@ -10,10 +11,12 @@ const PracticeArea = () => {
       <progress className="max-w-[1300px] mx-auto progress w-56"></progress>
     );
   return (
-    <section className="text-white bg-[#161D27] py-10">
+    <section id="knowMore" className="text-white bg-[#161D27] py-10">
       <div className="flex flex-col  justify-center items-center gap-5 lg:justify-between px-5 py-10 max-w-[1300px] mx-auto w-full">
-        <h3 className="text-3xl font-bold">Explore Our Practice Areas</h3>
-        <p className="flex text-center justify-end w-1/2">
+        <h3 className="font-titleFont text-4xl font-bold">
+          Explore Our Practice Areas
+        </h3>
+        <p className="font-titleFont text-lg flex text-center justify-end w-1/2">
           At EquiJuris Associates, we offer a wide range of legal services to
           meet your needs. From business law and family matters to estate
           planning and more, our experienced team is here to provide
@@ -40,11 +43,8 @@ const PracticeArea = () => {
           ))}
         </div>
         <div className="flex justify-end mt-10">
-          <Link
-            to="/practiceAreas"
-            className="btn btn-outline bg-[#161D27] border-[#D1B06B] text-white hover:bg-[#D1B06B] hover:text-black"
-          >
-            See More
+          <Link to="/practiceAreas">
+            <OutlineButton>See More</OutlineButton>
           </Link>
         </div>
       </div>

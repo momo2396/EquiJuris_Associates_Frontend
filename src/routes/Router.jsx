@@ -9,6 +9,7 @@ import PracticeAreas from "../pages/PracticeAreas";
 import Contact from "../pages/Contact";
 import OurAttorneys from "../pages/OurAttorneys";
 import AddPracticeArea from "../components/shared/AddPracticeArea";
+import Dashboard from "../components/DashboardComponents/Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
       {
         path: "/addPracticeArea",
         element: <AddPracticeArea></AddPracticeArea>,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>,
       },
     ],
   },

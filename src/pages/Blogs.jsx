@@ -3,13 +3,16 @@ import useGetData from "../routes/UseGetData";
 import Title from "../components/shared/Title";
 import Pagination from "../components/shared/Pagination";
 import { useState } from "react";
+import Loading from "../components/shared/Loading/Loading";
 
 const Blogs = () => {
   const [page, setPage] = useState(0);
   const { data, isLoading } = useGetData("/blogs/all-blogs");
   if (isLoading)
     return (
-      <progress className="max-w-[1300px] mx-auto progress w-56"></progress>
+      <div className="flex justify-center items-center bg-white h-screen">
+        <Loading />
+      </div>
     );
   return (
     <section className=" bg-[#1F2732] py-20 text-white">

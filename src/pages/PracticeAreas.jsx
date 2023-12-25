@@ -22,12 +22,7 @@ const PracticeAreas = () => {
           ></Title>
         </div>
       </div>
-      {/* <div className="flex flex-col  justify-center items-center gap-5 lg:justify-between px-5 py-10 max-w-[1300px] mx-auto w-full">
-        <h3 className="text-3xl font-bold"></h3>
-        <p className="flex text-center justify-end w-1/2">
-          
-        </p>
-      </div> */}
+
       <div className="py-20 px-5 max-w-[1300px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {data?.data?.map((p) => (
