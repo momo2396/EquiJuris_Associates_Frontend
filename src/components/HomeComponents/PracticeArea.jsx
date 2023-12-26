@@ -5,7 +5,6 @@ import OutlineButton from "../shared/OutlineButton/OutlineButton";
 
 const PracticeArea = () => {
   const { data, isLoading } = useGetData("/practiceAreas");
-  console.log(data);
   if (isLoading)
     return (
       <progress className="max-w-[1300px] mx-auto progress w-56"></progress>
@@ -28,18 +27,19 @@ const PracticeArea = () => {
       <div className="px-5 max-w-[1300px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {data?.data?.slice(0, 3).map((p) => (
-            <>
-              <div className="card bg-[#1F2732] shadow-xl border-2 border-[#D1B06B] rounded-md">
-                <div className="card-body">
-                  <div className="flex gap-5 justify-start items-center">
-                    <BsBagDash className="text-4xl font-bold text-[#D1B06B]" />{" "}
-                    <h2 className="card-title">{p?.type}</h2>
-                  </div>
-                  <div className="border border-gray-700 my-5"></div>
-                  <p>{p?.description}</p>
+            <div
+              className="card bg-[#1F2732] shadow-xl border-2 border-[#D1B06B] rounded-md"
+              key={p?._id}
+            >
+              <div className="card-body">
+                <div className="flex gap-5 justify-start items-center">
+                  <BsBagDash className="text-4xl font-bold text-[#D1B06B]" />{" "}
+                  <h2 className="card-title">{p?.type}</h2>
                 </div>
+                <div className="border border-gray-700 my-5"></div>
+                <p>{p?.description}</p>
               </div>
-            </>
+            </div>
           ))}
         </div>
         <div className="flex justify-end mt-10">

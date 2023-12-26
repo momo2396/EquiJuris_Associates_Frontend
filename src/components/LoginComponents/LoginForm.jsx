@@ -28,17 +28,23 @@ const LoginForm = () => {
     <div className="grid grid-cols-1 lg:grid-cols-2">
       <div className=" hidden lg:block min-h-[90vh] login_banner bg-cover bg-center">
         <div className="hero-overlay bg-opacity-60">
-          <div className="pt-72 lg:pt-80">
-            <h1 className="text-white text-center text-3xl font-bold">
-              Welcome to EquiJuris
+          <div className="text-white pt-72 lg:pt-80 text-center">
+            <h1 className="mb-5 text-4xl font-titleFont font-bold">
+              Welcome to EquiJuris Associates
             </h1>
+            <p className="mb-5 font-titleFont font-semibold text-lg">
+              We stand for justice and champion your rights. With our
+              experienced team of attorneys, your legal matters are in capable
+              hands. Trust us to advocate for your best interests every step of
+              the way.
+            </p>
           </div>
         </div>
       </div>
       <div
         className={`py-36 lg:py-80 bg-[url('https://i.ibb.co/vL9HCtH/scale02.jpg')] lg:bg-none bg-opacity-60 bg-cover bg-center lg:bg-[#161D27] text-white`}
       >
-        <h1 className="text-center text-[#D1B06B] text-3xl pb-5 font-bold">
+        <h1 className="font-titleFont text-center text-[#D1B06B] text-3xl pb-5 font-bold">
           Login Here
         </h1>
         <form
