@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import LogoutButton from "./LogoutButton/LogoutButton";
-
+import { MdLogin } from "react-icons/md";
 const Navbar = () => {
-  const user = true;
+  const user = false;
   return (
     <div className="navbar bg-black bg-opacity-20 backdrop-blur-lg fixed top-0 w-full text-white z-50">
       <div className="navbar-start">
@@ -139,12 +139,11 @@ const Navbar = () => {
       <div className="navbar-end gap-5">
         {!user ? (
           <>
-            {" "}
-            <NavLink to="/signUp" className="btn">
-              Sign Up
-            </NavLink>
-            <NavLink to="/login" className="btn">
-              Sign In
+            <NavLink
+              to="/login"
+              className="p-3 bg-transparent text-2xl border-[#d1b06b] text-[#d1b06b] hover:bg-[#d1b06b] hover:border-[#d1b06b] hover:text-white rounded-full rounded-tr-[10px] border-2 shadow-[#d1b16b64] shadow-md"
+            >
+              <MdLogin />
             </NavLink>
           </>
         ) : (

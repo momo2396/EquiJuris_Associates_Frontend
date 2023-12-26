@@ -10,9 +10,8 @@ const Blogs = () => {
   const { data, isLoading } = useGetData("/blogs/all-blogs");
   if (isLoading)
     return (
-      <div className="flex justify-center items-center bg-white h-screen">
-        <Loading />
-      </div>
+      <Loading />
+      // </div>
     );
   return (
     <section className=" bg-[#1F2732] py-20 text-white">
