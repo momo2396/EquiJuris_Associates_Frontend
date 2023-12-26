@@ -33,6 +33,7 @@ const SignUpForm = () => {
     setLoading(true);
     if (!photo) {
       setImageError("The image is required");
+      setLoading(false);
       return;
     }
     let image = photo;

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { myBrown } from "../../utilities/color";
 import { AuthContext } from "../providers/AuthProviders";
 import { useLocation, useNavigate } from "react-router";
@@ -9,8 +9,9 @@ const LoginForm = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-
+  const [loading, setLoading] = useState(false);
   const handleLogin = (event) => {
+    setLoading(true);
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
@@ -19,9 +20,11 @@ const LoginForm = () => {
       .then(() => {
         Swal.fire("Logged In!", "You logged in successfully!", "success");
         navigate(from, { replace: true });
+        setLoading(false);
       })
       .catch((error) => {
         Swal.fire(error?.message);
+        setLoading(false);
       });
   };
   return (
@@ -65,9 +68,16 @@ const LoginForm = () => {
             required
           />
           <div className="pt-5 flex flex-col lg:flex-row items-center gap-5">
-            <button className="btn bg-[#1F2732] border-[#1F2732] text-white hover:bg-[#D1B06B] hover:border-[#D1B06B] hover:text-black">
-              Login
-            </button>
+            {loading ? (
+              <span className="loading loading-spinner loading-lg"></span>
+            ) : (
+              <input
+                className="btn bg-[#1F2732] border-[#1F2732] text-white hover:bg-[#D1B06B] hover:border-[#D1B06B] hover:text-black"
+                value="Login"
+                type="submit"
+              />
+            )}
+
             <p>
               Don't you have any account? Please{" "}
               <Link to="/signUp" className={`text-[${myBrown}] underline`}>
