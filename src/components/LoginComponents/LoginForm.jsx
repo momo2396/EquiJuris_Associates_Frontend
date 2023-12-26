@@ -1,5 +1,29 @@
+import { useContext } from "react";
 import { myBrown } from "../../utilities/color";
+import { AuthContext } from "../providers/AuthProviders";
+import { useLocation, useNavigate } from "react-router";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 const LoginForm = () => {
+  const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    signIn(email, password)
+      .then(() => {
+        Swal.fire("Logged In!", "You logged in successfully!", "success");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        Swal.fire(error?.message);
+      });
+  };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">
       <div className=" hidden lg:block min-h-[90vh] login_banner bg-cover bg-center">
@@ -17,16 +41,21 @@ const LoginForm = () => {
         <h1 className="text-center text-[#D1B06B] text-3xl pb-5 font-bold">
           Login Here
         </h1>
-        <div className="backdrop-blur-xl py-10 px-5 mx-10 border-2 border-slate-400 rounded-xl">
+        <form
+          className="backdrop-blur-xl py-10 px-5 mx-10 border-2 border-slate-400 rounded-xl"
+          onSubmit={handleLogin}
+        >
           <input
             className="w-full bg-[#161D27] text-white-900 mt-2 p-3 border-b-[1px] placeholder-gray-400  border-slate-400 focus:outline-none focus:shadow-outline"
             type="email"
+            name="email"
             placeholder="e.g.; abc@gmail.com"
           />
           <input
             className="w-full bg-[#161D27] text-white-900 mt-2 p-3 border-b-[1px] placeholder-gray-400  border-slate-400 focus:outline-none focus:shadow-outline"
             type="password"
             placeholder="Enter Password*"
+            name="password"
             required
           />
           <div className="pt-5 flex flex-col lg:flex-row items-center gap-5">
@@ -35,12 +64,12 @@ const LoginForm = () => {
             </button>
             <p>
               Don't you have any account? Please{" "}
-              <a href="" className={`text-[${myBrown}] underline`}>
+              <Link to="/signUp" className={`text-[${myBrown}] underline`}>
                 Sign Up
-              </a>
+              </Link>
             </p>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
