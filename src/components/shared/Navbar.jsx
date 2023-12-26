@@ -1,10 +1,20 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import LogoutButton from "./LogoutButton/LogoutButton";
 import { MdLogin } from "react-icons/md";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProviders";
+import logo from "../../assets/other_images/eja.png";
 const Navbar = () => {
-  const user = false;
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        localStorage.removeItem("access_token");
+      })
+      .catch((error) => console.log(error));
+  };
+  const { user, logOut } = useContext(AuthContext);
   return (
-    <div className="navbar bg-black bg-opacity-20 backdrop-blur-lg fixed top-0 w-full text-white z-50">
+    <div className="navbar bg-[#1F2732] sticky top-0 w-full left-0 text-white z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -25,7 +35,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="relative menu menu-sm dropdown-content mt-3 p-2 shadow bg-black backdrop-blur-lg z-50 rounded-box w-52"
+            className="relative menu menu-sm dropdown-content mt-3 p-2 shadow bg-black backdrop-blur-lg z-50 rounded-box w-52 text-[#d1b06b] font-titleFont font-bold"
           >
             <li>
               <NavLink to="/">Home</NavLink>
@@ -76,11 +86,18 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">
-          EquiJuris Associates
-        </a>
+        <Link
+          to="/"
+          className="items-center flex gap-2 btn btn-ghost normal-case text-xl"
+        >
+          <img src={logo} className="h-full" alt="" />
+          <div className="flex flex-col items-start text-sm text-[#d1b06b] font-titleFont font-bold">
+            <p>Equijuris</p>
+            <p>Associates</p>
+          </div>
+        </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="text-[#d1b06b] font-bold font-titleFont navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
             <NavLink to="/">Home</NavLink>
@@ -147,7 +164,10 @@ const Navbar = () => {
             </NavLink>
           </>
         ) : (
-          <LogoutButton />
+          <>
+            <p>{user?.email}</p>
+            <LogoutButton onClick={handleLogOut} />
+          </>
         )}
       </div>
     </div>

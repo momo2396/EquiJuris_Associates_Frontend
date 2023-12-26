@@ -20,7 +20,6 @@ const auth = getAuth(app);
 const AuthProviders = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  console.log(user);
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -51,12 +50,11 @@ const AuthProviders = ({ children }) => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       axios
-        .get(backendURL + "/all-users/" + currentUser?.email)
+        .get(backendURL + "/users/single-user?email=" + currentUser?.email)
         .then((result) => {
-          if (result?.data?.userEmail) {
-            setUser(result?.data);
-
-            localStorage.setItem("access_token", result?.data?.token);
+          if (result?.data?.data?.email) {
+            setUser(result?.data?.data);
+            // localStorage.setItem("access_token", result?.data?.token);
           } else {
             setUser(null);
           }
