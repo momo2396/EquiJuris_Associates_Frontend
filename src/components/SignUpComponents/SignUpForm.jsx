@@ -4,10 +4,19 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProviders";
 import { postUser } from "../providers/postUser";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
+import { useForm } from "react-hook-form";
 
 const SignUpForm = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
   const [userType, setUserType] = useState("client");
-  const { createUser, updateUserProfile, logOut } = useContext(AuthContext);
+  const { createUser, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleRegister = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -36,6 +45,19 @@ const SignUpForm = () => {
       .then(async () => {
         // const loggedUser = result?.user;
         await postUser(userData);
+        Swal.fire({
+          title: "Successfully Registered",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+
+        logOut().then(() => {
+          navigate("/login");
+        });
       })
       .catch((err) => {
         Swal.fire({
