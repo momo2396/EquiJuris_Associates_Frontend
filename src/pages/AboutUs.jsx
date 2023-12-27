@@ -1,10 +1,10 @@
-import AboutUsSection from "../components/HomeComponents/AboutUsSection";
+import AboutUsSection from "../components/AboutUsComponents/AboutUsSection";
 
 const AboutUs = () => {
   return (
-  <div>
-    <AboutUsSection></AboutUsSection>
-  </div>
+    <div>
+      <AboutUsSection></AboutUsSection>
+    </div>
   );
 };
 
