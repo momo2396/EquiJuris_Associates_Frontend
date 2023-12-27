@@ -51,35 +51,6 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink to="/practiceAreas">Practice Areas</NavLink>
-              {/* <ul className="p-2">
-                <li>
-                  <a>Corporate and Commercial Law</a>
-                </li>
-                <li>
-                  <a>Civil Law</a>
-                </li>
-                <li>
-                  <a>Criminal Law</a>
-                </li>
-                <li>
-                  <a>Intellectual Property Law</a>
-                </li>
-                <li>
-                  <a>Labor Law</a>
-                </li>
-                <li>
-                  <a>Banking and Finance Law</a>
-                </li>
-                <li>
-                  <a>Administrative Law</a>
-                </li>
-                <li>
-                  <a>Family Law</a>
-                </li>
-                <li>
-                  <a>Tax Law</a>
-                </li>
-              </ul> */}
             </li>
             <li>
               <NavLink to="/blogs">Blogs</NavLink>
@@ -114,42 +85,8 @@ const Navbar = () => {
           <li>
             <NavLink to="/blogs">Blogs</NavLink>
           </li>
-          <li tabIndex={0}>
-            <details>
-              <summary>
-                {" "}
-                <NavLink to="/practiceAreas">Practice Areas</NavLink>
-              </summary>
-              {/* <ul className="p-2 bg-black backdrop-blur-lg">
-                <li>
-                  <a>Corporate and Commercial Law</a>
-                </li>
-                <li>
-                  <a>Civil Law</a>
-                </li>
-                <li>
-                  <a>Criminal Law</a>
-                </li>
-                <li>
-                  <a>Intellectual Property Law</a>
-                </li>
-                <li>
-                  <a>Labor Law</a>
-                </li>
-                <li>
-                  <a>Banking and Finance Law</a>
-                </li>
-                <li>
-                  <a>Administrative Law</a>
-                </li>
-                <li>
-                  <a>Family Law</a>
-                </li>
-                <li>
-                  <a>Tax Law</a>
-                </li>
-              </ul> */}
-            </details>
+          <li>
+            <NavLink to="/practiceAreas">Practice Areas</NavLink>
           </li>
         </ul>
       </div>
@@ -165,7 +102,27 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <p>{user?.email}</p>
+            <div className="flex flex-col md:flex-row gap-5 justify-center items-center">
+              <div className="flex flex-row justify-center items-center">
+                <div className="dropdown dropdown-bottom dropdown-end relative -left-5">
+                  <label tabIndex={0} className=" m-1">
+                    <img
+                      className="w-10 h-10 rounded-full border-2 border-[#d1b06b]"
+                      src={user?.image}
+                    />
+                  </label>
+                  <ul
+                    tabIndex={0}
+                    className="relative menu menu-sm dropdown-content mt-3 p-2 shadow bg-black backdrop-blur-lg z-50 rounded-box w-52 text-[#d1b06b] font-titleFont font-bold"
+                  >
+                    <div className="text-white">{user?.name}</div>
+                    <div className="flex flex-col items-stretch gap-5">
+                      <Link to="/dashboard">Dashboard</Link>
+                    </div>
+                  </ul>
+                </div>
+              </div>
+            </div>
             <LogoutButton onClick={handleLogOut} />
           </>
         )}
