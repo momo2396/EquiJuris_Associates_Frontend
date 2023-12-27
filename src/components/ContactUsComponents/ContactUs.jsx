@@ -18,20 +18,15 @@ const ContactUS = () => {
             ></Title>
           </div>
         </div>
-        <div className="py-10">
-          {/* <div className="flex flex-col justify-center items-center gap-5 lg:justify-between px-5 py-10 max-w-[1300px] mx-auto w-full">
-        <h1 className="font-titleFont text-6xl font-bold">Contact Us</h1>
-        <Icon1 className="text-10xl font-bold text-[#D1B06B]" />
-      </div> */}
-        </div>
-        <div className="bg-[#161D27] py-10">
-          <div className="w-full lg:w-9/12 mx-auto">
+        <div className="py-5"></div>
+        <div className="">
+          <div className="w-full mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
               <div className="mb-8">
-                <div className="flex items-start">
+                <div className="flex items-center">
                   <div className="shrink-0">
-                    <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
-                      <FiPhoneIncoming className="text-3xl font-bold text-[#D1B06B]" />
+                    <div className="inline-block rounded-md bg-primary-100 text-primary">
+                      <FiPhoneIncoming className="text-5xl font-bold text-[#D1B06B]" />
                     </div>
                   </div>
                   <div className="ml-6 grow">
@@ -43,10 +38,10 @@ const ContactUS = () => {
                 </div>
               </div>
               <div className="mb-8">
-                <div className="flex items-start">
+                <div className="flex items-center">
                   <div className="shrink-0">
-                    <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
-                      <MdEmail className="text-3xl font-bold text-[#D1B06B]" />
+                    <div className="inline-block rounded-md bg-primary-100 text-primary">
+                      <MdEmail className="text-6xl font-bold text-[#D1B06B]" />
                     </div>
                   </div>
                   <div className="ml-6 grow">
@@ -58,14 +53,14 @@ const ContactUS = () => {
                 </div>
               </div>
               <div className="mb-8">
-                <div className="align-start flex">
+                <div className="align-start flex items-center">
                   <div className="shrink-0">
-                    <div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
-                      <ImOffice className="text-3xl font-bold text-[#D1B06B]" />
+                    <div className="inline-block rounded-md bg-primary-100  text-primary">
+                      <ImOffice className="text-5xl font-bold text-[#D1B06B]" />
                     </div>
                   </div>
                   <div className="ml-6 grow">
-                    <p className="mb-2 font-bold text-white">Main Office:</p>
+                    <p className=" mb-2 font-bold text-white">Main Office:</p>
                     <p className="text-neutral-500 dark:text-neutral-200">
                       Jobra, Hathazari-4331, Chittagong.
                     </p>
@@ -80,10 +75,9 @@ const ContactUS = () => {
         <h1 className="font-titleFont text-4xl font-bold">FAQ</h1>
         <Icon1 className="text-10xl font-bold text-[#D1B06B]" />
       </div>
-      <section className="dark:bg-gray-800 dark:text-gray-100">
-        <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
+      <section className="text-gray-400 pb-10 text-lg">
+        <div className="container flex flex-col justify-center p-4 mx-auto">
           <div className="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32 dark:divide-gray-700">
-            {/* Your FAQ details go here */}
             <details>
               <summary className="py-2 outline-none cursor-pointer focus:underline">
                 What types of cases does your law firm handle?
