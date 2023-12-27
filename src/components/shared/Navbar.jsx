@@ -102,9 +102,9 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <div className="flex flex-col md:flex-row gap-5 justify-center items-center">
+            <div className="flex justify-center items-center gap-2">
               <div className="flex flex-row justify-center items-center">
-                <div className="dropdown dropdown-bottom dropdown-end relative -left-5">
+                <div className="dropdown dropdown-bottom dropdown-end relative -top-6 h-10">
                   <label tabIndex={0} className=" m-1">
                     <img
                       className="w-10 h-10 rounded-full border-2 border-[#d1b06b]"
@@ -113,7 +113,7 @@ const Navbar = () => {
                   </label>
                   <ul
                     tabIndex={0}
-                    className="relative menu menu-sm dropdown-content mt-3 p-2 shadow bg-black backdrop-blur-lg z-50 rounded-box w-52 text-[#d1b06b] font-titleFont font-bold"
+                    className="relative menu menu-sm dropdown-content mt-8 p-2 shadow bg-black backdrop-blur-lg z-50 rounded-box w-52 text-[#d1b06b] font-titleFont font-bold"
                   >
                     <div className="text-white">{user?.name}</div>
                     <div className="flex flex-col items-stretch gap-5">
@@ -122,8 +122,8 @@ const Navbar = () => {
                   </ul>
                 </div>
               </div>
+              <LogoutButton onClick={handleLogOut} />
             </div>
-            <LogoutButton onClick={handleLogOut} />
           </>
         )}
       </div>
