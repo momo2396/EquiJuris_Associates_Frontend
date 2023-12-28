@@ -1,4 +1,4 @@
-import ClientTable from "./Clienttable";
+import ClientTable from "./ClientTable";
 import LawyerTable from "./LawyerTable";
 
 const Users = () => {
