@@ -1,14 +1,12 @@
-import { BsBagDash } from "react-icons/bs";
+import { GoLaw } from "react-icons/go";
 import useGetData from "../routes/UseGetData";
 import Title from "../components/shared/Title";
+import Loading from "../components/shared/Loading/Loading";
 
 const PracticeAreas = () => {
   const { data, isLoading } = useGetData("/practiceAreas");
   console.log(data);
-  if (isLoading)
-    return (
-      <progress className="max-w-[1300px] mx-auto progress w-56"></progress>
-    );
+  if (isLoading) return <Loading />;
   return (
     <section className="text-white bg-[#161D27]">
       <div className="flex flex-col  justify-center items-center gap-5 lg:justify-between px-5 pb-10 max-w-[1300px] mx-auto w-full">
@@ -31,11 +29,13 @@ const PracticeAreas = () => {
                 <div className="card bg-[#1F2732] shadow-xl border-2 border-[#D1B06B] rounded-md">
                   <div className="card-body">
                     <div className="flex gap-5 justify-start items-center">
-                      <BsBagDash className="text-4xl font-bold text-[#D1B06B]" />{" "}
-                      <h2 className="card-title">{p?.type}</h2>
+                      <GoLaw className="text-4xl font-bold text-[#D1B06B]" />{" "}
+                      <h2 className="font-bold font-titleFont text-2xl">
+                        {p?.type}
+                      </h2>
                     </div>
-                    <div className="border border-gray-700 my-5"></div>
-                    <p>{p?.description}</p>
+                    <div className="border border-gray-700 my-2"></div>
+                    <p className="text-gray-400">{p?.description}</p>
                   </div>
                 </div>
               </>
