@@ -10,6 +10,9 @@ import Contact from "../pages/Contact";
 import OurAttorneys from "../pages/OurAttorneys";
 import AddPracticeArea from "../components/shared/AddPracticeArea";
 import Dashboard from "../components/DashboardComponents/Dashboard";
+import RoleCheck from "../components/providers/RoleCheck";
+import PrivateRoute from "../components/providers/PrivateRoute";
+import Users from "../components/DashboardComponents/adminPages/userComp/Users";
 
 export const router = createBrowserRouter([
   {
@@ -48,13 +51,39 @@ export const router = createBrowserRouter([
         path: "/contact",
         element: <Contact></Contact>,
       },
-      {
-        path: "/addPracticeArea",
-        element: <AddPracticeArea></AddPracticeArea>,
-      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
+    children: [
       {
         path: "/dashboard",
-        element: <Dashboard></Dashboard>,
+        element: (
+          <p className="text-center text-3xl font-bold mt-20">Select option </p>
+        ),
+      },
+      {
+        path: "/dashboard/admin/addPracticeArea",
+        element: (
+          <RoleCheck role={"lawyer"}>
+            {" "}
+            <AddPracticeArea></AddPracticeArea>
+          </RoleCheck>
+        ),
+      },
+      {
+        path: "/dashboard/admin/allUsers",
+        element: (
+          <RoleCheck role={"lawyer"}>
+            {" "}
+            <Users></Users>
+          </RoleCheck>
+        ),
       },
     ],
   },

@@ -1,9 +1,13 @@
 import axios from "axios";
 import { backendURL } from "../../routes/UseGetData";
 import Swal from "sweetalert2";
+import InputButton from "./InputButton/InputButton";
+import { useState } from "react";
 
 const AddPracticeArea = () => {
+  const [loading, setLoading] = useState(false);
   const handleArea = async (e) => {
+    setLoading(true);
     e.preventDefault();
     const form = e.target;
     const type = form.type.value;
@@ -32,14 +36,16 @@ const AddPracticeArea = () => {
           "error"
         );
       }
+      setLoading(false);
     } catch (error) {
       Swal.fire("ERROR!", error.message, "error");
+      setLoading(false);
     }
   };
 
   return (
     <div
-      className={`py-36  bg-[url('https://i.ibb.co/vL9HCtH/scale02.jpg')]  bg-opacity-60 bg-cover bg-center lg:bg-[#161D27] text-white`}
+      className={`py-36  bg-[url('https://i.ibb.co/vL9HCtH/scale02.jpg')]  bg-opacity-60 bg-cover bg-center bg-[#161D27] text-white`}
     >
       <section className="backdrop-blur-xl px-5 mx-10 border-2 border-slate-400 rounded-xl">
         <div className="flex justify-center items-center mx-auto appointment_background py-20">
@@ -66,12 +72,11 @@ const AddPracticeArea = () => {
                 ></textarea>
               </div>
               <div className="mt-10  flex items-center justify-center">
-                <input
-                  value="Add"
-                  type="submit"
-                  className="btn btn-outline capitalize text-sm font-bold tracking-wide text-white p-3 rounded-lg 
-                hover:bg-[#D1B06B] border-[#D1B06B] focus:outline-none focus:shadow-outline"
-                />
+                {loading ? (
+                  <span className="loading loading-spinner loading-lg"></span>
+                ) : (
+                  <InputButton>Add</InputButton>
+                )}
               </div>
             </form>
           </div>
