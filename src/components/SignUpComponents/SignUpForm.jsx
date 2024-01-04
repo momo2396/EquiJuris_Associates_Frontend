@@ -17,7 +17,7 @@ const SignUpForm = () => {
   const {
     register,
     handleSubmit,
-    reset,
+    // reset,
     formState: { errors },
   } = useForm();
   const photoRef = useRef(null);

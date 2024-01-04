@@ -26,6 +26,24 @@ const Dashboard = () => {
           <span>All Users</span>
         </Link>
       </li>
+      <li>
+        <Link
+          to="/dashboard/lawyer/createCase"
+          className="flex items-center p-2 space-x-3 rounded-md"
+        >
+          <FaPlus />
+          <span>Create case</span>
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/dashboard/lawyer/myCases"
+          className="flex items-center p-2 space-x-3 rounded-md"
+        >
+          <FaPlus />
+          <span>My Cases</span>
+        </Link>
+      </li>
     </>
   );
   return (

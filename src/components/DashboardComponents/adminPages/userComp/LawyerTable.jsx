@@ -1,13 +1,33 @@
-import useGetData from "../../../../routes/UseGetData";
-import Loading from "../../../shared/Loading/Loading";
+import useGetData, { backendURL } from "../../../../routes/UseGetData";
+// import Loading from "../../../shared/Loading/Loading";
 import { TbListDetails } from "react-icons/tb";
 import OutlineButton from "../../../shared/OutlineButton/OutlineButton";
 import Icon1 from "../../../../assets/customicon/icon1";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProviders";
+import Swal from "sweetalert2";
+import axios from "axios";
 const LawyerTable = () => {
-  const { data, isLoading } = useGetData("/users/all-users");
-  if (isLoading) {
-    <Loading />;
-  }
+  const { data } = useGetData("/users/all-users");
+  const { user } = useContext(AuthContext);
+  const handleCheck = async (e) => {
+    let status = "";
+    if (e?.target?.checked === true) status = "active";
+    else status = "inactive";
+    try {
+      await axios.put(
+        backendURL +
+          `/users/status-update?status=${status}&email=${user?.email}`
+      );
+      Swal.fire("The status has been changed");
+    } catch (err) {
+      Swal.fire("Something went wrong");
+    }
+  };
+
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
   return (
     <div className="overflow-x-auto bg-[#1F2732] mx-5">
       <div className="flex flex-col justify-center items-center gap-2 pb-5">
@@ -36,12 +56,12 @@ const LawyerTable = () => {
                   <td>{l?.email}</td>
                   <td>{l?.license}</td>
                   <td>
-                    {l?.status === "false" && (
-                      <input
-                        type="checkbox"
-                        className="toggle toggle-warning"
-                      />
-                    )}
+                    <input
+                      defaultChecked={l?.status === "active" ? true : false}
+                      type="checkbox"
+                      className="toggle toggle-warning"
+                      onChange={handleCheck}
+                    />
                   </td>
                   <td>
                     <div className="flex justify-center items-center">
