@@ -9,7 +9,6 @@ const RoleCheck = ({ children, role }) => {
   // const { data, isLoading } = useGetData(`users/all-users/${user?.userEmail}`);
   if (loading) {
     return (
-      // <progress className="progress w-56 flex justify-center items-center"></progress>
       <Loading />
     );
   }

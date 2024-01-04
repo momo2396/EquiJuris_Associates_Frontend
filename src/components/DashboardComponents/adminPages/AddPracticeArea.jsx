@@ -1,7 +1,7 @@
 import axios from "axios";
-import { backendURL } from "../../routes/UseGetData";
+import { backendURL } from "../../../routes/UseGetData";
 import Swal from "sweetalert2";
-import InputButton from "./InputButton/InputButton";
+import InputButton from "../../shared/InputButton/InputButton";
 import { useState } from "react";
 
 const AddPracticeArea = () => {

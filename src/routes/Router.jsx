@@ -8,11 +8,14 @@ import AboutUs from "../pages/AboutUs";
 import PracticeAreas from "../pages/PracticeAreas";
 import Contact from "../pages/Contact";
 import OurAttorneys from "../pages/OurAttorneys";
-import AddPracticeArea from "../components/shared/AddPracticeArea";
+import AddPracticeArea from "../components/DashboardComponents/adminPages/AddPracticeArea";
 import Dashboard from "../components/DashboardComponents/Dashboard";
 import RoleCheck from "../components/providers/RoleCheck";
 import PrivateRoute from "../components/providers/PrivateRoute";
 import Users from "../components/DashboardComponents/adminPages/userComp/Users";
+import CreateCase from "../components/DashboardComponents/lawyerPages/casePages/CreateCase";
+import MyCases from "../components/DashboardComponents/lawyerPages/casePages/MyCases";
+import SingleCase from "../components/DashboardComponents/lawyerPages/casePages/SingleCase";
 
 export const router = createBrowserRouter([
   {
@@ -82,6 +85,33 @@ export const router = createBrowserRouter([
           <RoleCheck role={"lawyer"}>
             {" "}
             <Users></Users>
+          </RoleCheck>
+        ),
+      },
+      {
+        path: "/dashboard/lawyer/createCase",
+        element: (
+          <RoleCheck role={"lawyer"}>
+            {" "}
+            <CreateCase />
+          </RoleCheck>
+        ),
+      },
+      {
+        path: "/dashboard/lawyer/myCases",
+        element: (
+          <RoleCheck role={"lawyer"}>
+            {" "}
+            <MyCases />
+          </RoleCheck>
+        ),
+      },
+      {
+        path: "/dashboard/lawyer/singleCase/:id",
+        element: (
+          <RoleCheck role={"lawyer"}>
+            {" "}
+            <SingleCase />
           </RoleCheck>
         ),
       },
