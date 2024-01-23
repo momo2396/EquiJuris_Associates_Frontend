@@ -27,7 +27,7 @@ const Home = () => {
         {/* blog Section: m */}
         <BlogSection />
         {/*single blog section */}
-        <BlogSingleSection />
+        {/* <BlogSingleSection /> */}
       </main>
       {/* <Footer /> */}
     </div>
