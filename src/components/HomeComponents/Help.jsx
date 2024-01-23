@@ -1,4 +1,3 @@
-import React from "react";
 import { AiFillHeart, AiFillStar } from "react-icons/ai";
 
 const Help = () => {
