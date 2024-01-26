@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProviders";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { Link } from "react-router-dom";
 const LawyerTable = () => {
   const { data } = useGetData("/users/all-users");
   const { user } = useContext(AuthContext);
@@ -64,11 +65,14 @@ const LawyerTable = () => {
                     />
                   </td>
                   <td>
-                    <div className="flex justify-center items-center">
+                    <Link
+                      to={`/dashboard/admin/singleUser/${l?.email}`}
+                      className="flex justify-center items-center "
+                    >
                       <OutlineButton>
                         <TbListDetails />
                       </OutlineButton>
-                    </div>
+                    </Link>
                   </td>
                 </tr>
               );

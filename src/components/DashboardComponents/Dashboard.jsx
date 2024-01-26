@@ -44,6 +44,15 @@ const Dashboard = () => {
           <span>My Cases</span>
         </Link>
       </li>
+      <li>
+        <Link
+          to="/dashboard/client/payment"
+          className="flex items-center p-2 space-x-3 rounded-md"
+        >
+          <FaPlus />
+          <span>Pay</span>
+        </Link>
+      </li>
     </>
   );
   return (
