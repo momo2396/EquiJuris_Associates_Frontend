@@ -1,11 +1,13 @@
-import { useState } from "react";
-import useGetData from "../../../../routes/UseGetData";
+import { useEffect, useState } from "react";
+import useGetData, { backendURL } from "../../../../routes/UseGetData";
 import { useLocation } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import Title from "../../../shared/Title";
 import { MdOutlinePersonAdd } from "react-icons/md";
 import TooltipButton from "../../../shared/toolTipButton/TooltipButton";
+import Loading from "../../../shared/Loading/Loading";
+import OutlineButton from "../../../shared/OutlineButton/OutlineButton";
 // import { AuthContext } from "../../../providers/AuthProviders";
 const SingleCase = () => {
   const location = useLocation();
@@ -14,26 +16,32 @@ const SingleCase = () => {
   const [mailLoading, setMailLoading] = useState(false);
   const [caseClients, setCaseClients] = useState([]);
   const [caseLawyers, setCaseLawyers] = useState([]);
-  const { data } = useGetData(`/cases/single-case/${id}`);
+  const { data, refetch, isLoading } = useGetData(`/cases/single-case/${id}`);
   const usersQuery = useGetData("/users/all-users");
+  useEffect(() => {
+    if (!isLoading) {
+      setCaseClients(data?.data?.clients || []);
+      setCaseLawyers(data?.data?.lawyers || []);
+    }
+  }, [isLoading]);
+  const handleUpdate = async () => {
+    let res = await fetch(backendURL + "/cases/update-case/" + id, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        clients: caseClients,
+        lawyers: caseLawyers,
+      }),
+    });
+    const resdata = await res.json();
+    refetch();
+    Swal.fire("Updated Successfully");
+  };
   const handleEmail = async () => {
-    const clients = [
-      {
-        name: "Momo",
-        email: "foyazunnesamomo.345@gmail.com",
-      },
-      {
-        name: "Tomo",
-        email: "foyazunnesaalammomo@gmail.com",
-      },
-      {
-        name: "Colossus",
-        email: "sayemazizchy@gmail.com",
-      },
-    ];
-
     setMailLoading(true);
-    clients?.forEach(async (c) => {
+    caseClients?.forEach(async (c) => {
       const emailData = {
         client: c?.name,
         date: "12-01-24",
@@ -82,6 +90,7 @@ const SingleCase = () => {
     const remaining = caseLawyers.filter((f) => f?.email !== c?.email);
     setCaseLawyers(remaining);
   };
+  if (isLoading) return <Loading />;
   return (
     <div className="bg-[#1F2732] min-h-screen px-5">
       <Title heading={data?.data?.title} subHeading={data?.data?.description} />
@@ -187,14 +196,17 @@ const SingleCase = () => {
               </div>
             </div>
           </div>
+          <div className="pt-5">
+            <OutlineButton onClick={handleUpdate}>Update</OutlineButton>
+          </div>
         </div>
         {/* <div className="flex flex-col gap-2 text-white">
           <h1>{data?.data?.title}</h1>
-        </div>
+        </div> */}
       </div>
-      <div> */}
-        {/* <input type="date" />
-        <input type="time" /> */}
+      <div className="pt-5">
+        <input type="date" />
+        <input type="time" />
       </div>
       {/* <div>
         {mailLoading ? (
