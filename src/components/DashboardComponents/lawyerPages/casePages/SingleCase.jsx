@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import useGetData, { backendURL } from "../../../../routes/UseGetData";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import Title from "../../../shared/Title";
@@ -8,6 +8,8 @@ import { MdOutlinePersonAdd } from "react-icons/md";
 import TooltipButton from "../../../shared/toolTipButton/TooltipButton";
 import Loading from "../../../shared/Loading/Loading";
 import OutlineButton from "../../../shared/OutlineButton/OutlineButton";
+import { AuthContext } from "../../../providers/AuthProviders";
+import ViewFiles from "./ViewFiles";
 // import { AuthContext } from "../../../providers/AuthProviders";
 const SingleCase = () => {
   const location = useLocation();
@@ -18,6 +20,7 @@ const SingleCase = () => {
   const [caseLawyers, setCaseLawyers] = useState([]);
   const { data, refetch, isLoading } = useGetData(`/cases/single-case/${id}`);
   const usersQuery = useGetData("/users/all-users");
+  const { user } = useContext(AuthContext);
   useEffect(() => {
     if (!isLoading) {
       setCaseClients(data?.data?.clients || []);
@@ -161,7 +164,7 @@ const SingleCase = () => {
                   className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-lg  w-max"
                 >
                   {usersQuery?.data?.data?.map((u) => {
-                    if (u?.role === "lawyer")
+                    if (u?.role === "lawyer" && u?.email !== user?.email)
                       return (
                         <button
                           onClick={() => handleAddLawyer(u)}
@@ -217,6 +220,15 @@ const SingleCase = () => {
           </button>
         )}
       </div> */}
+      <div className="pt-5">
+        <Link to={`/dashboard/lawyer/caseFile/${id}`}>
+          {" "}
+          <OutlineButton>Create Case File</OutlineButton>
+        </Link>
+      </div>
+      <div className="pt-5 pb-10">
+        <ViewFiles caseFiles={data?.data?.caseFiles} />
+      </div>
     </div>
   );
 };
