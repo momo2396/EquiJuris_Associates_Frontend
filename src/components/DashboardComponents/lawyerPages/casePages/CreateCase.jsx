@@ -19,12 +19,16 @@ const CreateCase = () => {
   const onSubmit = async (data) => {
     setLoading(true);
     const lawyerEmail = user?.email;
+    const lawyerImage = user?.image;
+    const lawyerName = user?.name;
     const title = data?.title;
     const description = data?.description;
     const response = await axios.post(
       backendURL + "/cases/insert-case",
       {
         lawyerEmail: lawyerEmail,
+        lawyerName: lawyerName,
+        lawyerImage: lawyerImage,
         title: title,
         description: description,
         createdAt: new Date(),

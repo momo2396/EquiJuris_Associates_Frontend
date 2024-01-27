@@ -1,12 +1,16 @@
+import { useContext } from "react";
 import { backendURL } from "../../../routes/UseGetData";
 import OutlineButton from "../../shared/OutlineButton/OutlineButton";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const Payment = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   const handlePayment = () => {
     const data = {
       caseID: "6595a7722b8ccbf42abb6381",
-      price: 10000,
-      name: "Foyazunnesa",
+      name: user?.name,
+      email: user?.email,
     };
     console.log(data);
     fetch(backendURL + "/pay", {

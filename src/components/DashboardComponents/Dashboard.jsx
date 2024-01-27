@@ -6,6 +6,19 @@ import { Link } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
+  const clientMenu = (
+    <>
+      <li>
+        <Link
+          to="/dashboard/client/myCases"
+          className="flex items-center p-2 space-x-3 rounded-md"
+        >
+          <FaPlus />
+          <span>My Cases</span>
+        </Link>
+      </li>
+    </>
+  );
   const lawyerMenu = (
     <>
       <li>
@@ -73,6 +86,7 @@ const Dashboard = () => {
             ></label>
             <ul className="menu p-4 w-80 min-h-full bg-[#d1b06b] text-gray-500 text-base">
               {user?.role === "lawyer" && lawyerMenu}
+              {user?.role === "client" && clientMenu}
             </ul>
           </div>
         </div>

@@ -18,6 +18,9 @@ import MyCases from "../components/DashboardComponents/lawyerPages/casePages/MyC
 import SingleCase from "../components/DashboardComponents/lawyerPages/casePages/SingleCase";
 import UserDeatils from "../components/DashboardComponents/adminPages/userComp/UserDeatils";
 import Payment from "../components/DashboardComponents/clientPages/Payment";
+import MyCasesClients from "../components/DashboardComponents/clientPages/MyCasesClients";
+import SingleCaseClient from "../components/DashboardComponents/clientPages/SingleCaseClient";
+import CreateCaseFile from "../components/DashboardComponents/lawyerPages/casePages/CreateCaseFile";
 
 export const router = createBrowserRouter([
   {
@@ -100,6 +103,15 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "/dashboard/client/myCases",
+        element: (
+          <RoleCheck role={"client"}>
+            {" "}
+            <MyCasesClients></MyCasesClients>
+          </RoleCheck>
+        ),
+      },
+      {
         path: "/dashboard/client/payment",
         element: (
           <RoleCheck role={"lawyer"}>
@@ -132,6 +144,24 @@ export const router = createBrowserRouter([
           <RoleCheck role={"lawyer"}>
             {" "}
             <SingleCase />
+          </RoleCheck>
+        ),
+      },
+      {
+        path: "/dashboard/client/singleCase/:id",
+        element: (
+          <RoleCheck role={"client"}>
+            {" "}
+            <SingleCaseClient />
+          </RoleCheck>
+        ),
+      },
+      {
+        path: "/dashboard/lawyer/caseFile/:id",
+        element: (
+          <RoleCheck role={"lawyer"}>
+            {" "}
+            <CreateCaseFile />
           </RoleCheck>
         ),
       },
