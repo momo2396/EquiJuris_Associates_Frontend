@@ -207,7 +207,7 @@ const SingleCase = () => {
           <h1>{data?.data?.title}</h1>
         </div> */}
       </div>
-      <div className="pt-5">
+      <div className="pt-5 flex flex-col gap-3 w-fit">
         <input type="date" />
         <input type="time" />
       </div>
