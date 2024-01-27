@@ -16,6 +16,7 @@ import Users from "../components/DashboardComponents/adminPages/userComp/Users";
 import CreateCase from "../components/DashboardComponents/lawyerPages/casePages/CreateCase";
 import MyCases from "../components/DashboardComponents/lawyerPages/casePages/MyCases";
 import SingleCase from "../components/DashboardComponents/lawyerPages/casePages/SingleCase";
+import AddBlog from "../components/DashboardComponents/lawyerPages/blogPages/AddBlog";
 
 export const router = createBrowserRouter([
   {
@@ -97,6 +98,16 @@ export const router = createBrowserRouter([
           </RoleCheck>
         ),
       },
+      {
+        path: "/dashboard/lawyer/addBlog",
+        element: (
+          <RoleCheck role={"lawyer"}>
+            {" "}
+            <AddBlog></AddBlog>
+          </RoleCheck>
+        ),
+      },
+
       {
         path: "/dashboard/lawyer/myCases",
         element: (
