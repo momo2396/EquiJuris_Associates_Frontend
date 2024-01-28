@@ -11,14 +11,13 @@ import { Link } from "react-router-dom";
 const LawyerTable = () => {
   const { data } = useGetData("/users/all-users");
   const { user } = useContext(AuthContext);
-  const handleCheck = async (e) => {
+  const handleCheck = async (e, u) => {
     let status = "";
     if (e?.target?.checked === true) status = "active";
     else status = "inactive";
     try {
       await axios.put(
-        backendURL +
-          `/users/status-update?status=${status}&email=${user?.email}`
+        backendURL + `/users/status-update?status=${status}&email=${u?.email}`
       );
       Swal.fire("The status has been changed");
     } catch (err) {
@@ -61,7 +60,7 @@ const LawyerTable = () => {
                       defaultChecked={l?.status === "active" ? true : false}
                       type="checkbox"
                       className="toggle toggle-warning"
-                      onChange={handleCheck}
+                      onChange={(e) => handleCheck(e, l)}
                     />
                   </td>
                   <td>

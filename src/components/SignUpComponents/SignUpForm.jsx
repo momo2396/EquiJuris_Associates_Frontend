@@ -55,7 +55,7 @@ const SignUpForm = () => {
         role: userType,
         license: data?.license,
         image,
-        status: "pending",
+        status: "inactive",
       };
     }
     createUser(data?.email, data?.password)
