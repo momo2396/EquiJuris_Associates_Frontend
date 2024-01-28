@@ -4,6 +4,7 @@ import Title from "../../shared/Title";
 // import Icon1 from "../../../assets/customicon/icon1";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+import UploadImageFiles from "./UploadImageFiles";
 
 const SingleCaseClient = () => {
   const location = useLocation();
@@ -92,6 +93,9 @@ const SingleCaseClient = () => {
             ))}
         </tbody>
       </table>
+      <div className="py-20">
+        <UploadImageFiles id={id} />
+      </div>
     </div>
   );
 };

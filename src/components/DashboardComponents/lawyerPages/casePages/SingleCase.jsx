@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import useGetData, { backendURL } from "../../../../routes/UseGetData";
 import { Link, useLocation } from "react-router-dom";
-import emailjs from "@emailjs/browser";
+
 import Swal from "sweetalert2";
 import Title from "../../../shared/Title";
 import { MdOutlinePersonAdd } from "react-icons/md";
@@ -9,22 +9,27 @@ import TooltipButton from "../../../shared/toolTipButton/TooltipButton";
 import Loading from "../../../shared/Loading/Loading";
 import OutlineButton from "../../../shared/OutlineButton/OutlineButton";
 import { AuthContext } from "../../../providers/AuthProviders";
+import { ImCross } from "react-icons/im";
 import ViewFiles from "./ViewFiles";
+import HearingDates from "./HearingDates";
+import ClientDocs from "./ClientDocs";
 // import { AuthContext } from "../../../providers/AuthProviders";
 const SingleCase = () => {
   const location = useLocation();
   const { pathname } = location;
   const id = pathname.split("/").pop();
-  const [mailLoading, setMailLoading] = useState(false);
   const [caseClients, setCaseClients] = useState([]);
   const [caseLawyers, setCaseLawyers] = useState([]);
+  const [stat, setStat] = useState("");
   const { data, refetch, isLoading } = useGetData(`/cases/single-case/${id}`);
   const usersQuery = useGetData("/users/all-users");
   const { user } = useContext(AuthContext);
+  console.log(data?.data?.clientDocs);
   useEffect(() => {
     if (!isLoading) {
       setCaseClients(data?.data?.clients || []);
       setCaseLawyers(data?.data?.lawyers || []);
+      setStat(data?.data?.status);
     }
   }, [isLoading]);
   const handleUpdate = async () => {
@@ -36,32 +41,27 @@ const SingleCase = () => {
       body: JSON.stringify({
         clients: caseClients,
         lawyers: caseLawyers,
+        status: stat,
       }),
     });
     const resdata = await res.json();
     refetch();
     Swal.fire("Updated Successfully");
   };
-  const handleEmail = async () => {
-    setMailLoading(true);
-    caseClients?.forEach(async (c) => {
-      const emailData = {
-        client: c?.name,
-        date: "12-01-24",
-        time: "9:00 AM",
-        lawyer: "Foyazunnesa Alam",
-        designation: "Senior Lawyer",
-        clientEmail: c?.email,
-      };
-      await emailjs.send(
-        import.meta.env.VITE_emailJSServiceID,
-        import.meta.env.VITE_emailJSTemplateID,
-        emailData,
-        import.meta.env.VITE_emailJSPublicKey
-      );
+  const handleClose = async () => {
+    let res = await fetch(backendURL + "/cases/update-case/" + id, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        status: "closed",
+      }),
     });
-    Swal.fire("Email has been sent");
-    setMailLoading(false);
+    const resdata = await res.json();
+    refetch();
+    Swal.fire("Case Closed");
+    refetch();
   };
   const handleAddClient = (u) => {
     const exist = caseClients.find((f) => f?.email === u?.email);
@@ -97,19 +97,37 @@ const SingleCase = () => {
   return (
     <div className="bg-[#1F2732] min-h-screen px-5">
       <Title heading={data?.data?.title} subHeading={data?.data?.description} />
+      <div className="flex justify-center items-center p-10 text-white">
+        <ul className="steps steps-vertical">
+          <li className="step step-success">Case Started</li>
+          {data?.data?.hearingDates &&
+            data?.data?.hearingDates.map((h, index) => (
+              <li key={h?.date} className="step step-success">{`Hearing date ${
+                index + 1
+              } (${h?.date})`}</li>
+            ))}
+          {data?.data?.status === "closed" ? (
+            <li className="step step-success">Case Ended</li>
+          ) : (
+            <li className="step">Case Ended</li>
+          )}
+        </ul>
+      </div>
       <div className="">
         <div>
           <div className="flex flex-col gap-5">
             <div>
               <div className="dropdown">
-                <div tabIndex={2} role="button">
-                  {" "}
-                  <TooltipButton>
-                    <p className="flex gap-2 items-center">
-                      Add client <MdOutlinePersonAdd size={20} />
-                    </p>
-                  </TooltipButton>
-                </div>
+                {data?.data?.status !== "closed" && (
+                  <div tabIndex={2} role="button">
+                    {" "}
+                    <TooltipButton>
+                      <p className="flex gap-2 items-center">
+                        Add client <MdOutlinePersonAdd size={20} />
+                      </p>
+                    </TooltipButton>
+                  </div>
+                )}
                 <ul
                   tabIndex={2}
                   className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-lg  w-max"
@@ -137,28 +155,35 @@ const SingleCase = () => {
                   })}
                 </ul>
               </div>
-              <div className="flex gap-5 flex-wrap mt-5">
+              <p className="text-white text-center">Added Clients</p>
+              <div className="text-white flex gap-5 flex-wrap mt-5">
                 {caseClients?.map((c) => (
-                  <button
-                    className="bg-white p-2 rounded-lg"
-                    key={c?.email}
-                    onClick={() => handleRemoveClient(c)}
-                  >
-                    {c?.name}
-                  </button>
+                  <div key={c?.email} className="flex gap-2">
+                    <p>{c?.email}</p>
+                    {data?.data?.status !== "closed" && (
+                      <button
+                        className="bg-white p-2 rounded-lg text-black"
+                        onClick={() => handleRemoveClient(c)}
+                      >
+                        <ImCross />
+                      </button>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
             <div>
               <div className="dropdown">
-                <div tabIndex={2} role="button">
-                  {" "}
-                  <TooltipButton>
-                    <p className="flex gap-2 items-center">
-                      Add Lawyer <MdOutlinePersonAdd size={20} />
-                    </p>
-                  </TooltipButton>
-                </div>
+                {data?.data?.status !== "closed" && (
+                  <div tabIndex={2} role="button">
+                    {" "}
+                    <TooltipButton>
+                      <p className="flex gap-2 items-center">
+                        Add Lawyer <MdOutlinePersonAdd size={20} />
+                      </p>
+                    </TooltipButton>
+                  </div>
+                )}
                 <ul
                   tabIndex={2}
                   className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-lg  w-max"
@@ -186,49 +211,56 @@ const SingleCase = () => {
                   })}
                 </ul>
               </div>
-              <div className="flex gap-5 flex-wrap mt-5">
+              <p className="text-white text-center">Added Clients</p>
+              <div className="flex gap-5 flex-wrap mt-5 text-white">
                 {caseLawyers?.map((c) => (
-                  <button
-                    className="bg-white p-2 rounded-lg"
-                    key={c?.email}
-                    onClick={() => handleRemoveLawyer(c)}
-                  >
-                    {c?.name}
-                  </button>
+                  <div key={c?.email} className="flex gap-2">
+                    <p>{c?.email}</p>
+                    {data?.data?.status !== "closed" && (
+                      <button
+                        className="bg-white p-2 rounded-lg text-black"
+                        onClick={() => handleRemoveLawyer(c)}
+                      >
+                        <ImCross />
+                      </button>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
           </div>
-          <div className="pt-5">
-            <OutlineButton onClick={handleUpdate}>Update</OutlineButton>
-          </div>
+          {data?.data?.status !== "closed" && (
+            <div className="pt-5">
+              <OutlineButton onClick={handleUpdate}>Update</OutlineButton>
+            </div>
+          )}
         </div>
-        {/* <div className="flex flex-col gap-2 text-white">
-          <h1>{data?.data?.title}</h1>
-        </div> */}
       </div>
-      <div className="pt-5 flex flex-col gap-3 w-fit">
-        <input type="date" />
-        <input type="time" />
-      </div>
-      {/* <div>
-        {mailLoading ? (
-          <div>progressing</div>
-        ) : (
-          <button className="btn" onClick={handleEmail}>
-            Send
-          </button>
-        )}
-      </div> */}
       <div className="pt-5">
-        <Link to={`/dashboard/lawyer/caseFile/${id}`}>
-          {" "}
-          <OutlineButton>Create Case File</OutlineButton>
-        </Link>
+        <HearingDates id={id} status={data?.data?.status} />
       </div>
+      {data?.data?.status !== "closed" && (
+        <div className="pt-5">
+          <Link to={`/dashboard/lawyer/caseFile/${id}`}>
+            {" "}
+            <OutlineButton>Create Case File</OutlineButton>
+          </Link>
+        </div>
+      )}
       <div className="pt-5 pb-10">
         <ViewFiles caseFiles={data?.data?.caseFiles} />
       </div>
+      <div className="pt-5 pb-10">
+        <ClientDocs clientDocs={data?.data?.clientDocs} />
+      </div>
+      {stat === "pending" ? (
+        <div className="pt-5 pb-10 flex gap-3 justify-end items-center">
+          <p className="text-white">Want to Close the Case?</p>
+          <OutlineButton onClick={handleClose}>Close</OutlineButton>
+        </div>
+      ) : (
+        <p className="text-white">Case Closed..</p>
+      )}
     </div>
   );
 };
