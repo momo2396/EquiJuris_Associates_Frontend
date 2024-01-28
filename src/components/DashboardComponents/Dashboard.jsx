@@ -32,6 +32,15 @@ const Dashboard = () => {
       </li>
       <li>
         <Link
+          to="/dashboard/lawyer/addBlog"
+          className="flex items-center p-2 space-x-3 rounded-md"
+        >
+          <FaPlus />
+          <span>Add Blog</span>
+        </Link>
+      </li>
+      <li>
+        <Link
           to="/dashboard/admin/allUsers"
           className="flex items-center p-2 space-x-3 rounded-md"
         >
