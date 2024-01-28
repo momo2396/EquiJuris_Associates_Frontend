@@ -48,6 +48,39 @@ const Dashboard = () => {
           <span>My Appointments</span>
         </Link>
       </li>
+
+      <li>
+        <Link
+          to="/dashboard/lawyer/addBlog"
+          className="flex items-center p-2 space-x-3 rounded-md"
+        >
+          <FaPlus />
+          <span>Add Blog</span>
+        </Link>
+      </li>
+
+      <li>
+        <Link
+          to="/dashboard/lawyer/createCase"
+          className="flex items-center p-2 space-x-3 rounded-md"
+        >
+          <FaPlus />
+          <span>Create case</span>
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/dashboard/lawyer/myCases"
+          className="flex items-center p-2 space-x-3 rounded-md"
+        >
+          <FaPlus />
+          <span>My Cases</span>
+        </Link>
+      </li>
+    </>
+  );
+  const adminMenu = (
+    <>
       <li>
         <Link
           to="/dashboard/admin/allCases"
@@ -68,47 +101,11 @@ const Dashboard = () => {
       </li>
       <li>
         <Link
-          to="/dashboard/client/myCases"
-          className="flex items-center p-2 space-x-3 rounded-md"
-        >
-          <FaPlus />
-          <span>My Cases</span>
-        </Link>
-      </li>
-      <li>
-        <Link
-          to="/dashboard/lawyer/addBlog"
-          className="flex items-center p-2 space-x-3 rounded-md"
-        >
-          <FaPlus />
-          <span>Add Blog</span>
-        </Link>
-      </li>
-      <li>
-        <Link
           to="/dashboard/admin/allUsers"
           className="flex items-center p-2 space-x-3 rounded-md"
         >
           <FaPlus />
           <span>All Users</span>
-        </Link>
-      </li>
-      <li>
-        <Link
-          to="/dashboard/lawyer/createCase"
-          className="flex items-center p-2 space-x-3 rounded-md"
-        >
-          <FaPlus />
-          <span>Create case</span>
-        </Link>
-      </li>
-      <li>
-        <Link
-          to="/dashboard/lawyer/myCases"
-          className="flex items-center p-2 space-x-3 rounded-md"
-        >
-          <FaPlus />
-          <span>My Cases</span>
         </Link>
       </li>
     </>
