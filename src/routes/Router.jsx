@@ -25,7 +25,6 @@ import AddBlog from "../components/DashboardComponents/lawyerPages/blogPages/Add
 import SingleBlog from "../pages/SingleBlog";
 import UserProfile from "../components/DashboardComponents/UserProfile";
 import MyAppointments from "../components/DashboardComponents/lawyerPages/MyAppointments";
-
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -118,6 +117,12 @@ export const router = createBrowserRouter([
             {" "}
             <MyCasesClients></MyCasesClients>
           </RoleCheck>
+        ),
+      },
+      {
+        path: "/dashboard/profile",
+        element: (
+        <UserProfile></UserProfile>
         ),
       },
       {

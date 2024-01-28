@@ -8,6 +8,15 @@ const Dashboard = () => {
   const { user } = useContext(AuthContext);
   const clientMenu = (
     <>
+    <li>
+        <Link
+          to="/dashboard/profile"
+          className="flex items-center p-2 space-x-3 rounded-md"
+        >
+          <FaUser />
+          <span>Profile</span>
+        </Link>
+      </li>
       <li>
         <Link
           to="/dashboard/client/myCases"
@@ -17,7 +26,11 @@ const Dashboard = () => {
           <span>My Cases</span>
         </Link>
       </li>
-      <li>
+    </>
+  );
+  const lawyerMenu = (
+    <>
+    <li>
         <Link
           to="/dashboard/profile"
           className="flex items-center p-2 space-x-3 rounded-md"
@@ -26,10 +39,6 @@ const Dashboard = () => {
           <span>Profile</span>
         </Link>
       </li>
-    </>
-  );
-  const lawyerMenu = (
-    <>
       <li>
         <Link
           to="/dashboard/lawyer/myAppointments"
@@ -46,15 +55,6 @@ const Dashboard = () => {
         >
           <FaPlus />
           <span>Add Practice Area</span>
-        </Link>
-      </li>
-      <li>
-        <Link
-          to="/dashboard/profile"
-          className="flex items-center p-2 space-x-3 rounded-md"
-        >
-          <FaUser />
-          <span>Profile</span>
         </Link>
       </li>
       <li>
