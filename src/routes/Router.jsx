@@ -16,6 +16,11 @@ import Users from "../components/DashboardComponents/adminPages/userComp/Users";
 import CreateCase from "../components/DashboardComponents/lawyerPages/casePages/CreateCase";
 import MyCases from "../components/DashboardComponents/lawyerPages/casePages/MyCases";
 import SingleCase from "../components/DashboardComponents/lawyerPages/casePages/SingleCase";
+import UserDeatils from "../components/DashboardComponents/adminPages/userComp/UserDeatils";
+import Payment from "../components/DashboardComponents/clientPages/Payment";
+import MyCasesClients from "../components/DashboardComponents/clientPages/MyCasesClients";
+import SingleCaseClient from "../components/DashboardComponents/clientPages/SingleCaseClient";
+import CreateCaseFile from "../components/DashboardComponents/lawyerPages/casePages/CreateCaseFile";
 
 export const router = createBrowserRouter([
   {
@@ -80,11 +85,38 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "/dashboard/admin/singleUser/:email",
+        element: (
+          <RoleCheck role={"lawyer"}>
+            {" "}
+            <UserDeatils></UserDeatils>
+          </RoleCheck>
+        ),
+      },
+      {
         path: "/dashboard/admin/allUsers",
         element: (
           <RoleCheck role={"lawyer"}>
             {" "}
             <Users></Users>
+          </RoleCheck>
+        ),
+      },
+      {
+        path: "/dashboard/client/myCases",
+        element: (
+          <RoleCheck role={"client"}>
+            {" "}
+            <MyCasesClients></MyCasesClients>
+          </RoleCheck>
+        ),
+      },
+      {
+        path: "/dashboard/client/payment",
+        element: (
+          <RoleCheck role={"lawyer"}>
+            {" "}
+            <Payment></Payment>
           </RoleCheck>
         ),
       },
@@ -112,6 +144,24 @@ export const router = createBrowserRouter([
           <RoleCheck role={"lawyer"}>
             {" "}
             <SingleCase />
+          </RoleCheck>
+        ),
+      },
+      {
+        path: "/dashboard/client/singleCase/:id",
+        element: (
+          <RoleCheck role={"client"}>
+            {" "}
+            <SingleCaseClient />
+          </RoleCheck>
+        ),
+      },
+      {
+        path: "/dashboard/lawyer/caseFile/:id",
+        element: (
+          <RoleCheck role={"lawyer"}>
+            {" "}
+            <CreateCaseFile />
           </RoleCheck>
         ),
       },

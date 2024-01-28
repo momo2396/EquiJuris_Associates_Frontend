@@ -1,6 +1,10 @@
 import "./OutlineButton.css";
 
-const OutlineButton = ({ children }) => {
-  return <button className="farms-button-outline">{children}</button>;
+const OutlineButton = ({ children, onClick }) => {
+  return (
+    <button onClick={onClick} className="farms-button-outline">
+      {children}
+    </button>
+  );
 };
 export default OutlineButton;

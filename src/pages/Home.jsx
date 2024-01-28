@@ -5,7 +5,6 @@ import LawyerSection from "../components/HomeComponents/LawyerSection";
 import ClientReviewSection from "../components/HomeComponents/ClientReviewSection";
 import AppointmentSection from "../components/HomeComponents/AppointmentSection";
 import BlogSection from "../components/HomeComponents/BlogSection";
-import BlogSingleSection from "../components/BlogSectionComp/BlogSingleSection";
 
 const Home = () => {
   return (
@@ -27,7 +26,7 @@ const Home = () => {
         {/* blog Section: m */}
         <BlogSection />
         {/*single blog section */}
-        <BlogSingleSection />
+        {/* <BlogSingleSection /> */}
       </main>
       {/* <Footer /> */}
     </div>
