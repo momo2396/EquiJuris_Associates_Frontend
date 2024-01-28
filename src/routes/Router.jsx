@@ -24,7 +24,7 @@ import CreateCaseFile from "../components/DashboardComponents/lawyerPages/casePa
 import AddBlog from "../components/DashboardComponents/lawyerPages/blogPages/AddBlog";
 import SingleBlog from "../pages/SingleBlog";
 import UserProfile from "../components/DashboardComponents/UserProfile";
-import MyAppointments from "../components/DashboardComponents/lawyerPages/MyAppointments";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -45,7 +45,6 @@ export const router = createBrowserRouter([
       {
         path: "/blogs/:id",
         element: <SingleBlog></SingleBlog>,
-        
       },
       {
         path: "/signUp",

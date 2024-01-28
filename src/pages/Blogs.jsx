@@ -12,7 +12,7 @@ const Blogs = () => {
   const { data, isLoading } = useGetData("/blogs/all-blogs");
 
   if (isLoading) return <Loading />;
-  
+
   return (
     <section className="bg-[#1F2732] text-white">
       <div className="flex flex-col justify-center items-center gap-5 lg:justify-between px-5 pb-10 max-w-[1300px] mx-auto w-full">
@@ -25,8 +25,13 @@ const Blogs = () => {
         </div>
         <div className="max-w-[1400px] mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-5 pt-20">
           {data?.data?.slice(page * 4, page * 4 + 4).map((d) => (
-            <div key={d._id}> {/* Add key prop here */}
-              <div className="w-full bg-cover bg-center aspect-[10/5] bg-slate-400" style={{ backgroundImage: `url("${d?.blogImage}")` }}></div>
+            <div key={d._id}>
+              {" "}
+              {/* Add key prop here */}
+              <div
+                className="w-full bg-cover bg-center aspect-[10/5] bg-slate-400"
+                style={{ backgroundImage: `url("${d?.blogImage}")` }}
+              ></div>
               <div className="pt-10">
                 <p className="text-[#D1B06B] pb-1 line-clamp-1">
                   {d?.category} |{" "}
@@ -43,7 +48,10 @@ const Blogs = () => {
                 </h3>
                 <p>{d?.body.split(" ").slice(0, 20).join(" ")}...</p>
                 <ul>
-                  <Link to={{ pathname: `/blogs/${d._id}`, state: { blog: d } }} className="text-[#D1B06B] underline">
+                  <Link
+                    to={{ pathname: `/blogs/${d?._id}` }}
+                    className="text-[#D1B06B] underline"
+                  >
                     Read More
                   </Link>
                 </ul>
@@ -63,6 +71,3 @@ const Blogs = () => {
 };
 
 export default Blogs;
-
-
-
