@@ -3,11 +3,20 @@ import DashboardNavbar from "./DashboardNavbar";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProviders";
 import { Link } from "react-router-dom";
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaUser } from "react-icons/fa";
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
   const clientMenu = (
     <>
+      <li>
+        <Link
+          to="/dashboard/profile"
+          className="flex items-center p-2 space-x-3 rounded-md"
+        >
+          <FaUser />
+          <span>Profile</span>
+        </Link>
+      </li>
       <li>
         <Link
           to="/dashboard/client/myCases"
@@ -21,6 +30,15 @@ const Dashboard = () => {
   );
   const lawyerMenu = (
     <>
+      <li>
+        <Link
+          to="/dashboard/profile"
+          className="flex items-center p-2 space-x-3 rounded-md"
+        >
+          <FaUser />
+          <span>Profile</span>
+        </Link>
+      </li>
       <li>
         <Link
           to="/dashboard/lawyer/myAppointments"
@@ -46,6 +64,15 @@ const Dashboard = () => {
         >
           <FaPlus />
           <span>Add Practice Area</span>
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/dashboard/client/myCases"
+          className="flex items-center p-2 space-x-3 rounded-md"
+        >
+          <FaPlus />
+          <span>My Cases</span>
         </Link>
       </li>
       <li>

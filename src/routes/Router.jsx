@@ -25,6 +25,8 @@ import AddBlog from "../components/DashboardComponents/lawyerPages/blogPages/Add
 import SingleBlog from "../pages/SingleBlog";
 import MyAppointments from "../components/DashboardComponents/lawyerPages/MyAppointments";
 import AllCases from "../components/DashboardComponents/adminPages/AllCases";
+import UserProfile from "../components/DashboardComponents/UserProfile";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -198,6 +200,10 @@ export const router = createBrowserRouter([
             <MyAppointments />
           </RoleCheck>
         ),
+      },
+      {
+        path: "/dashboard/profile",
+        element: <UserProfile></UserProfile>,
       },
     ],
   },
