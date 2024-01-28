@@ -16,17 +16,14 @@ const UserProfile = () => {
   const handleEditProfile = async () => {
     try {
       const updateProfileURL = `${backendURL}/users/update/${user.email}`;
-      const response = await fetch(
-        updateProfileURL,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: localStorage.getItem("access_token"),
-          },
-          body: JSON.stringify(userData),
-        }
-      );
+      const response = await fetch(updateProfileURL, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: localStorage.getItem("access_token"),
+        },
+        body: JSON.stringify(userData),
+      });
 
       if (!response.ok) {
         throw new Error(`Request failed with status ${response.status}`);
@@ -47,7 +44,9 @@ const UserProfile = () => {
 
   return (
     <div className="bg-[#1F2732] p-5 rounded-xl max-w-3xl mx-auto mt-10">
-      <h2 className="text-2xl font-bold text-[#D1B06B] mb-5 text-center">User Profile</h2>
+      <h2 className="text-2xl font-bold text-[#D1B06B] mb-5 text-center">
+        User Profile
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label className="text-gray-400 mb-1 md:mr-2 block">Name:</label>
@@ -64,7 +63,9 @@ const UserProfile = () => {
             type="text"
             className="form-input p-2 w-full"
             value={userData.email}
-            onChange={(e) => setUserData({ ...userData, email: e.target.value })}
+            onChange={(e) =>
+              setUserData({ ...userData, email: e.target.value })
+            }
             disabled
           />
         </div>
@@ -75,14 +76,20 @@ const UserProfile = () => {
               type="text"
               className="form-input p-2 w-full"
               value={userData.license}
-              onChange={(e) => setUserData({ ...userData, license: e.target.value })}
+              onChange={(e) =>
+                setUserData({ ...userData, license: e.target.value })
+              }
             />
           </div>
         )}
         <div className="flex items-center">
           <label className="text-gray-400 mr-2 block">User Image</label>
           {userData.image && (
-            <img src={userData.image} alt="User" className="rounded-full h-20 w-20 object-cover" />
+            <img
+              src={userData.image}
+              alt="User"
+              className="rounded-full h-20 w-20 object-cover"
+            />
           )}
         </div>
       </div>

@@ -87,7 +87,7 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/admin/addPracticeArea",
         element: (
-          <RoleCheck role={"lawyer"}>
+          <RoleCheck role={"admin"}>
             {" "}
             <AddPracticeArea></AddPracticeArea>
           </RoleCheck>
@@ -96,7 +96,7 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/admin/singleUser/:email",
         element: (
-          <RoleCheck role={"lawyer"}>
+          <RoleCheck role={"admin"}>
             {" "}
             <UserDeatils></UserDeatils>
           </RoleCheck>
@@ -105,7 +105,7 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/admin/allUsers",
         element: (
-          <RoleCheck role={"lawyer"}>
+          <RoleCheck role={"admin"}>
             {" "}
             <Users></Users>
           </RoleCheck>
@@ -132,7 +132,7 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/admin/allCases",
         element: (
-          <RoleCheck role={"lawyer"}>
+          <RoleCheck role={"admin"}>
             {" "}
             <AllCases />
           </RoleCheck>
