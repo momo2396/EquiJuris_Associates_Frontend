@@ -22,6 +22,7 @@ import MyCasesClients from "../components/DashboardComponents/clientPages/MyCase
 import SingleCaseClient from "../components/DashboardComponents/clientPages/SingleCaseClient";
 import CreateCaseFile from "../components/DashboardComponents/lawyerPages/casePages/CreateCaseFile";
 import AddBlog from "../components/DashboardComponents/lawyerPages/blogPages/AddBlog";
+import SingleBlog from "../pages/SingleBlog";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -38,6 +39,11 @@ export const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs></Blogs>,
+      },
+      {
+        path: "/blogs/:id",
+        element: <SingleBlog></SingleBlog>,
+        
       },
       {
         path: "/signUp",
