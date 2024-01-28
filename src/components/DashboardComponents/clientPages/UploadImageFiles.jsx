@@ -8,7 +8,6 @@ import Swal from "sweetalert2";
 import { FaEdit } from "react-icons/fa";
 import { MdUpload } from "react-icons/md";
 import InputButton from "../../shared/InputButton/InputButton";
-import Title from "../../shared/Title";
 import Icon1 from "../../../assets/customicon/icon1";
 import OutlineButton from "../../shared/OutlineButton/OutlineButton";
 import { TbListDetails } from "react-icons/tb";

@@ -1,7 +1,6 @@
 import { TbListDetails } from "react-icons/tb";
 import OutlineButton from "../../../shared/OutlineButton/OutlineButton";
 import { ImCross } from "react-icons/im";
-import { Link, json } from "react-router-dom";
 import Icon1 from "../../../../assets/customicon/icon1";
 import PDFFile from "./PDFFile";
 import { useState } from "react";
@@ -19,41 +18,45 @@ const ViewFiles = ({ caseFiles }) => {
             <Icon1></Icon1>
           </div>
 
-          <table className="table table-xs   text-gray-400 table-pin-rows table-pin-cols">
-            <thead>
-              <tr className="text-center z-0 bg-[#1F2732] text-white text-lg">
-                <td>Title</td>
-                <td>Created At</td>
-                <td>Author Email</td>
-                <td>View</td>
-              </tr>
-            </thead>
-            <tbody>
-              {caseFiles?.map((l) => (
-                <>
-                  <tr key={l?.createdAt} className="text-center">
-                    <td>{l?.pdfTitle}</td>
-                    <td>{l?.createdAt}</td>
-                    <td className="text-[#D1B06B]">{l?.author}</td>
-                    <>
-                      <td>
-                        <label
-                          onClick={() =>
-                            document.getElementById("my_modal").showModal()
-                          }
-                          className="flex justify-center items-center"
-                        >
-                          <OutlineButton onClick={() => setFile(l)}>
-                            <TbListDetails />
-                          </OutlineButton>
-                        </label>
-                      </td>
-                    </>
-                  </tr>
-                </>
-              ))}
-            </tbody>
-          </table>
+          {caseFiles ? (
+            <table className="table table-xs   text-gray-400 table-pin-rows table-pin-cols">
+              <thead>
+                <tr className="text-center z-0 bg-[#1F2732] text-white text-lg">
+                  <td>Title</td>
+                  <td>Created At</td>
+                  <td>Author Email</td>
+                  <td>View</td>
+                </tr>
+              </thead>
+              <tbody>
+                {caseFiles?.map((l) => (
+                  <>
+                    <tr key={l?.createdAt} className="text-center">
+                      <td>{l?.pdfTitle}</td>
+                      <td>{l?.createdAt}</td>
+                      <td className="text-[#D1B06B]">{l?.author}</td>
+                      <>
+                        <td>
+                          <label
+                            onClick={() =>
+                              document.getElementById("my_modal").showModal()
+                            }
+                            className="flex justify-center items-center"
+                          >
+                            <OutlineButton onClick={() => setFile(l)}>
+                              <TbListDetails />
+                            </OutlineButton>
+                          </label>
+                        </td>
+                      </>
+                    </tr>
+                  </>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <p className="text-white text-center"> No case files added</p>
+          )}
         </div>
       </div>
       <dialog id="my_modal" className="modal modal-bottom sm:modal-middle">
