@@ -43,7 +43,6 @@ export const router = createBrowserRouter([
       {
         path: "/blogs/:id",
         element: <SingleBlog></SingleBlog>,
-        
       },
       {
         path: "/signUp",
