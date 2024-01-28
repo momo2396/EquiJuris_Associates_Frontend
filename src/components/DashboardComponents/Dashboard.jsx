@@ -129,6 +129,7 @@ const Dashboard = () => {
             <ul className="menu p-4 w-80 min-h-full bg-[#d1b06b] text-gray-500 text-base">
               {user?.role === "lawyer" && lawyerMenu}
               {user?.role === "client" && clientMenu}
+              {user?.role === "admin" && adminMenu}
             </ul>
           </div>
         </div>
