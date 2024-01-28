@@ -23,6 +23,8 @@ import SingleCaseClient from "../components/DashboardComponents/clientPages/Sing
 import CreateCaseFile from "../components/DashboardComponents/lawyerPages/casePages/CreateCaseFile";
 import AddBlog from "../components/DashboardComponents/lawyerPages/blogPages/AddBlog";
 import SingleBlog from "../pages/SingleBlog";
+import MyAppointments from "../components/DashboardComponents/lawyerPages/MyAppointments";
+import AllCases from "../components/DashboardComponents/adminPages/AllCases";
 import UserProfile from "../components/DashboardComponents/UserProfile";
 import MyAppointments from "../components/DashboardComponents/lawyerPages/MyAppointments"
 
@@ -120,23 +122,20 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/dashboard/profile",
+        path: "/dashboard/client/payment/:id",
         element: (
-        <UserProfile></UserProfile>
+          <RoleCheck role={"client"}>
+            {" "}
+            <Payment></Payment>
+          </RoleCheck>
         ),
       },
       {
-        path: "/dashboard/profile",
-        element: (
-        <UserProfile></UserProfile>
-        ),
-      },
-      {
-        path: "/dashboard/client/payment",
+        path: "/dashboard/admin/allCases",
         element: (
           <RoleCheck role={"lawyer"}>
             {" "}
-            <Payment></Payment>
+            <AllCases />
           </RoleCheck>
         ),
       },
@@ -202,6 +201,10 @@ export const router = createBrowserRouter([
             <MyAppointments />
           </RoleCheck>
         ),
+      },
+      {
+        path: "/dashboard/profile",
+        element: <UserProfile></UserProfile>,
       },
     ],
   },

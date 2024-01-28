@@ -8,7 +8,7 @@ const Dashboard = () => {
   const { user } = useContext(AuthContext);
   const clientMenu = (
     <>
-    <li>
+      <li>
         <Link
           to="/dashboard/profile"
           className="flex items-center p-2 space-x-3 rounded-md"
@@ -30,7 +30,7 @@ const Dashboard = () => {
   );
   const lawyerMenu = (
     <>
-    <li>
+      <li>
         <Link
           to="/dashboard/profile"
           className="flex items-center p-2 space-x-3 rounded-md"
@@ -50,11 +50,11 @@ const Dashboard = () => {
       </li>
       <li>
         <Link
-          to="/dashboard/lawyer/myAppointments"
+          to="/dashboard/admin/allCases"
           className="flex items-center p-2 space-x-3 rounded-md"
         >
           <FaPlus />
-          <span>My Appointments</span>
+          <span>All Cases</span>
         </Link>
       </li>
       <li>
@@ -109,15 +109,6 @@ const Dashboard = () => {
         >
           <FaPlus />
           <span>My Cases</span>
-        </Link>
-      </li>
-      <li>
-        <Link
-          to="/dashboard/client/payment"
-          className="flex items-center p-2 space-x-3 rounded-md"
-        >
-          <FaPlus />
-          <span>Pay</span>
         </Link>
       </li>
     </>

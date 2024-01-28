@@ -66,7 +66,7 @@ const AppointmentSection = () => {
                   className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-lg  w-max"
                 >
                   {data?.data?.map((u) => {
-                    if (u?.role === "lawyer")
+                    if (u?.role === "lawyer" && u?.status === "active")
                       return (
                         <button
                           onClick={() => setLawyer(u?.email)}

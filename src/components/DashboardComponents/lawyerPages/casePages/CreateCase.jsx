@@ -23,6 +23,7 @@ const CreateCase = () => {
     const lawyerName = user?.name;
     const title = data?.title;
     const description = data?.description;
+    const caseMoney = data?.caseMoney;
     const response = await axios.post(
       backendURL + "/cases/insert-case",
       {
@@ -30,9 +31,11 @@ const CreateCase = () => {
         lawyerName: lawyerName,
         lawyerImage: lawyerImage,
         title: title,
+        caseMoney: caseMoney,
         description: description,
         createdAt: new Date(),
         status: "pending",
+        isPaid: "unpaid",
       },
       {
         headers: {
@@ -92,7 +95,16 @@ const CreateCase = () => {
                 placeholder="Appropriate title of the case*"
               />
               {errors.title && (
-                <span className="text-[#D1B06B]">The name is required</span>
+                <span className="text-[#D1B06B]">The field is required</span>
+              )}
+              <input
+                {...register("caseMoney", { required: true })}
+                className="w-full bg-[#141516] placeholder-gray-400 text-white mt-2 p-3 border-[1px] border-slate-400 focus:outline-none focus:shadow-outline"
+                type="text"
+                placeholder="Case Money*"
+              />
+              {errors.caseMoney && (
+                <span className="text-[#D1B06B]">The field is required</span>
               )}
               {/* <div className="">
                 <input
@@ -110,7 +122,7 @@ const CreateCase = () => {
                 className="w-full h-32 bg-[#141516] placeholder-gray-400 text-white mt-2 p-3 border-[1px] border-slate-400 focus:outline-none focus:shadow-outline"
               ></textarea>
               {errors.description && (
-                <span className="text-[#D1B06B]">The name is required</span>
+                <span className="text-[#D1B06B]">The field is required</span>
               )}
               {/* </div> */}
               <div className="mt-10  flex items-center justify-center">
