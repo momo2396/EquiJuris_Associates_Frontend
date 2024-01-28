@@ -15,7 +15,7 @@ const LawyerSection = () => {
         Our Experienced Attorney Are Ready <br></br>To answer any questions
       </h1>
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-5 gap-20">
-        {data?.data?.slice(0, 3)?.map((m) => {
+        {data?.data?.map((m) => {
           if (m?.role === "lawyer" && m?.status === "active")
             return (
               <>
