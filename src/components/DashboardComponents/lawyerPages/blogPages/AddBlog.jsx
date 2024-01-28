@@ -44,7 +44,7 @@ const AddBlog = () => {
       {
         title: info?.title,
         category: category,
-        image,
+        blogImage: image,
         body: info?.body,
         lawyerEmail: user?.email,
         createdDate: new Date(),
