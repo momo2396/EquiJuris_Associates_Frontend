@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import useGetData, { backendURL } from "../../../../routes/UseGetData";
 import { Link, useLocation } from "react-router-dom";
-import emailjs from "@emailjs/browser";
+
 import Swal from "sweetalert2";
 import Title from "../../../shared/Title";
 import { MdOutlinePersonAdd } from "react-icons/md";
@@ -10,12 +10,12 @@ import Loading from "../../../shared/Loading/Loading";
 import OutlineButton from "../../../shared/OutlineButton/OutlineButton";
 import { AuthContext } from "../../../providers/AuthProviders";
 import ViewFiles from "./ViewFiles";
+import HearingDates from "./HearingDates";
 // import { AuthContext } from "../../../providers/AuthProviders";
 const SingleCase = () => {
   const location = useLocation();
   const { pathname } = location;
   const id = pathname.split("/").pop();
-  const [mailLoading, setMailLoading] = useState(false);
   const [caseClients, setCaseClients] = useState([]);
   const [caseLawyers, setCaseLawyers] = useState([]);
   const { data, refetch, isLoading } = useGetData(`/cases/single-case/${id}`);
@@ -42,27 +42,7 @@ const SingleCase = () => {
     refetch();
     Swal.fire("Updated Successfully");
   };
-  const handleEmail = async () => {
-    setMailLoading(true);
-    caseClients?.forEach(async (c) => {
-      const emailData = {
-        client: c?.name,
-        date: "12-01-24",
-        time: "9:00 AM",
-        lawyer: "Foyazunnesa Alam",
-        designation: "Senior Lawyer",
-        clientEmail: c?.email,
-      };
-      await emailjs.send(
-        import.meta.env.VITE_emailJSServiceID,
-        import.meta.env.VITE_emailJSTemplateID,
-        emailData,
-        import.meta.env.VITE_emailJSPublicKey
-      );
-    });
-    Swal.fire("Email has been sent");
-    setMailLoading(false);
-  };
+
   const handleAddClient = (u) => {
     const exist = caseClients.find((f) => f?.email === u?.email);
     if (exist) {
@@ -97,6 +77,18 @@ const SingleCase = () => {
   return (
     <div className="bg-[#1F2732] min-h-screen px-5">
       <Title heading={data?.data?.title} subHeading={data?.data?.description} />
+      <div className="flex justify-center items-center p-10 text-white">
+        <ul className="steps steps-vertical">
+          <li className="step step-success">Case Started</li>
+          {data?.data?.hearingDates &&
+            data?.data?.hearingDates.map((h, index) => (
+              <li key={h?.date} className="step step-success">{`Hearing date ${
+                index + 1
+              } (${h?.date})`}</li>
+            ))}
+          <li className="step ">Case Ended</li>
+        </ul>
+      </div>
       <div className="">
         <div>
           <div className="flex flex-col gap-5">
@@ -207,9 +199,8 @@ const SingleCase = () => {
           <h1>{data?.data?.title}</h1>
         </div> */}
       </div>
-      <div className="pt-5 flex flex-col gap-3 w-fit">
-        <input type="date" />
-        <input type="time" />
+      <div className="pt-5">
+        <HearingDates id={id} />
       </div>
       {/* <div>
         {mailLoading ? (
