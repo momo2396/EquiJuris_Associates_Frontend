@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 import Icon1 from "../../../assets/customicon/icon1";
 import useGetData from "../../../routes/UseGetData";
 import Loading from "../../shared/Loading/Loading";
+import ViewFileClient from "./ViewFileClient";
 
 const MyCasesClients = () => {
   const { user } = useContext(AuthContext);
   const { data, isLoading } = useGetData(
     `/cases/cases-for-clients?email=${user?.email}`
   );
-  console.log(data?.data);
   if (isLoading) return <Loading></Loading>;
   return (
     <>
@@ -34,6 +34,7 @@ const MyCasesClients = () => {
                   <td>Title</td>
                   <td>Created At</td>
                   <td>Status</td>
+                  <td>isPaid</td>
                   <td>View</td>
                 </tr>
               </thead>
@@ -43,6 +44,15 @@ const MyCasesClients = () => {
                     <td>{l?.title}</td>
                     <td>{l?.createdAt}</td>
                     <td className="text-[#D1B06B]">{l?.status}</td>
+                    <td>
+                      {l?.isPaid === "unpaid" ? (
+                        <Link to={`/dashboard/client/payment/${l?._id}`}>
+                          <OutlineButton>Pay</OutlineButton>
+                        </Link>
+                      ) : (
+                        "paid"
+                      )}
+                    </td>
                     <td>
                       <Link
                         to={`/dashboard/client/singleCase/${l?._id}`}

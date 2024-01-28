@@ -24,6 +24,7 @@ import CreateCaseFile from "../components/DashboardComponents/lawyerPages/casePa
 import AddBlog from "../components/DashboardComponents/lawyerPages/blogPages/AddBlog";
 import SingleBlog from "../pages/SingleBlog";
 import MyAppointments from "../components/DashboardComponents/lawyerPages/MyAppointments";
+import AllCases from "../components/DashboardComponents/adminPages/AllCases";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -118,11 +119,20 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/dashboard/client/payment",
+        path: "/dashboard/client/payment/:id",
+        element: (
+          <RoleCheck role={"client"}>
+            {" "}
+            <Payment></Payment>
+          </RoleCheck>
+        ),
+      },
+      {
+        path: "/dashboard/admin/allCases",
         element: (
           <RoleCheck role={"lawyer"}>
             {" "}
-            <Payment></Payment>
+            <AllCases />
           </RoleCheck>
         ),
       },

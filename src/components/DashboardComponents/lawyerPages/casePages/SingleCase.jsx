@@ -23,8 +23,8 @@ const SingleCase = () => {
   const [stat, setStat] = useState("");
   const { data, refetch, isLoading } = useGetData(`/cases/single-case/${id}`);
   const usersQuery = useGetData("/users/all-users");
+  const paymentInfo = useGetData("/pay/view-payment/" + id);
   const { user } = useContext(AuthContext);
-  console.log(data?.data?.clientDocs);
   useEffect(() => {
     if (!isLoading) {
       setCaseClients(data?.data?.clients || []);
@@ -32,6 +32,7 @@ const SingleCase = () => {
       setStat(data?.data?.status);
     }
   }, [isLoading]);
+
   const handleUpdate = async () => {
     let res = await fetch(backendURL + "/cases/update-case/" + id, {
       method: "PUT",
@@ -113,6 +114,17 @@ const SingleCase = () => {
           )}
         </ul>
       </div>
+      <div className="text-white text-center pb-10">
+        {data?.data?.isPaid === "unpaid" ? (
+          <p className="border-1 p-2 border-white">Not paid yet..</p>
+        ) : (
+          <>
+            <p>Transaction ID: {paymentInfo?.data?.data?.transactionID}</p>
+            <p>Paid By(email): {paymentInfo?.data?.data?.paidByEmail}</p>
+            <p>Paid By(name): {paymentInfo?.data?.data?.paidByName}</p>
+          </>
+        )}
+      </div>
       <div className="">
         <div>
           <div className="flex flex-col gap-5">
@@ -189,7 +201,11 @@ const SingleCase = () => {
                   className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-lg  w-max"
                 >
                   {usersQuery?.data?.data?.map((u) => {
-                    if (u?.role === "lawyer" && u?.email !== user?.email)
+                    if (
+                      u?.role === "lawyer" &&
+                      u?.email !== user?.email &&
+                      u?.status === "active"
+                    )
                       return (
                         <button
                           onClick={() => handleAddLawyer(u)}

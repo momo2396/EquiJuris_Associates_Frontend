@@ -2,17 +2,19 @@ import { useContext } from "react";
 import { backendURL } from "../../../routes/UseGetData";
 import OutlineButton from "../../shared/OutlineButton/OutlineButton";
 import { AuthContext } from "../../providers/AuthProviders";
+import { useLocation } from "react-router";
 
 const Payment = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
+  const location = useLocation();
+  const { pathname } = location;
+  const id = pathname.split("/").pop();
   const handlePayment = () => {
     const data = {
-      caseID: "6595a7722b8ccbf42abb6381",
+      caseID: id,
       name: user?.name,
       email: user?.email,
     };
-    console.log(data);
     fetch(backendURL + "/pay", {
       method: "POST",
       headers: { "Content-type": "application/json" },

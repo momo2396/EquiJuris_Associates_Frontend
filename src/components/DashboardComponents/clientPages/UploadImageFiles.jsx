@@ -13,7 +13,7 @@ import OutlineButton from "../../shared/OutlineButton/OutlineButton";
 import { TbListDetails } from "react-icons/tb";
 import { ImCross } from "react-icons/im";
 
-const UploadImageFiles = ({ id }) => {
+const UploadImageFiles = ({ id, status }) => {
   const [loading, setLoading] = useState(false);
   const [clientDoc, setClientDoc] = useState([]);
   const [file, setFile] = useState(null);
@@ -149,13 +149,15 @@ const UploadImageFiles = ({ id }) => {
                   <span className="text-[#D1B06B]">{imageError}</span>
                 )}
               </div>
-              <div className="mt-10  flex items-center justify-center">
-                {loading ? (
-                  <span className="loading loading-spinner loading-lg"></span>
-                ) : (
-                  <InputButton>Add</InputButton>
-                )}
-              </div>
+              {status === "pending" && (
+                <div className="mt-10  flex items-center justify-center">
+                  {loading ? (
+                    <span className="loading loading-spinner loading-lg"></span>
+                  ) : (
+                    <InputButton>Add</InputButton>
+                  )}
+                </div>
+              )}
             </form>
           </div>
         </div>
