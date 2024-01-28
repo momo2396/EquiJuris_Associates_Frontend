@@ -86,7 +86,7 @@ const SingleCase = () => {
                 index + 1
               } (${h?.date})`}</li>
             ))}
-          <li className="step">Case Ended</li>
+          <li className="step ">Case Ended</li>
         </ul>
       </div>
       <div className="">
