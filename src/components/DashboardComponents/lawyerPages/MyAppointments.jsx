@@ -19,6 +19,7 @@ const MyAppointments = () => {
       lawyerEmail: file?.lawyerEmail,
       fullName: file?.fullName,
     };
+    console.log(emailData);
     await emailjs.send(
       import.meta.env.VITE_emailJSServiceID,
       import.meta.env.VITE_emailJSAppointmentTemplateID,
