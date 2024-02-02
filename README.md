@@ -4,7 +4,7 @@ A law-firm management system. You can use this application for your law-firm.
 
 ## Live Link:
 
-[EquiJuris Associates] (https://equijuris-associates.vercel.app/)
+[EquiJuris Associates](https://equijuris-associates.vercel.app/)
 
 ## Getting started:
 
@@ -28,14 +28,14 @@ npm run dev
 
 example:
 
-[localhost:5173] (http://localhost:5173)
+[localhost:5173](http://localhost:5173)
 
 ## Technology used:
 
-[React JS Framework] (https://react.dev/)
-[Tailwind CSS Framework] (https://tailwindcss.com/)
-[Express JS Framework] (https://expressjs.com/)
-[Mongo DB] (https://www.mongodb.com/)
+- [React JS Framework](https://react.dev/)
+- [Tailwind CSS Framework](https://tailwindcss.com/)
+- [Express JS Framework](https://expressjs.com/)
+- [Mongo DB](https://www.mongodb.com/)
 
 ## Project Members:
 
